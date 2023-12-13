@@ -6,6 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "analyze": "ANALYZE=true yarn build",
     "lint": "eslint . --fix"
   },
   "dependencies": {
@@ -15,6 +16,7 @@
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
+    "@next/bundle-analyzer": "^14.0.4",
     "@next/eslint-plugin-next": "^14.0.2",
     "@sdks/eslint-config": "*",
     "@sdks/typescript-config": "*",

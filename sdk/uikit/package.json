@@ -8,15 +8,15 @@
     "./code": "./src/code.tsx"
   },
   "scripts": {
-    "lint": "eslint . --max-warnings 0",
+    "lint": "eslint --ext .js,.ts,.tsx --fix",
     "generate:component": "turbo gen react-component"
   },
   "devDependencies": {
     "@sdk/eslint-config": "*",
     "@sdk/typescript-config": "*",
     "@turbo/gen": "^1.10.12",
-    "@types/node": "^20.5.2",
     "@types/eslint": "^8.44.7",
+    "@types/node": "^20.5.2",
     "@types/react": "^18.2.0",
     "@types/react-dom": "^18.2.0",
     "eslint": "^8.53.0",

@@ -1,15 +1,15 @@
 import * as express from 'express';
 import * as cors from 'cors';
 import * as cookieParser from 'cookie-parser';
-import { createNetWork, IRS, transportListener } from '@cellularjs/net';
+import { IRS, transportListener } from '@cellularjs/net';
 import { getLogger } from '@cellularjs/logger';
-import { netCnfs } from '$share/net';
 import { createServer } from 'http';
 import { env } from '$share/env';
 import { configRoutes } from './routes';
+import { initNetwork } from './net';
 
 export async function initApp() {
-  await createNetWork(netCnfs);
+  await initNetwork();
 
   const app = express();
   const httpServer = createServer(app);

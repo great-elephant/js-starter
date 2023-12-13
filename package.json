@@ -11,8 +11,8 @@
   "devDependencies": {
     "@commitlint/cli": "^18.4.3",
     "@commitlint/config-conventional": "^18.4.3",
-    "@sdk/eslint-config": "*",
-    "@sdk/typescript-config": "*",
+    "@sdks/eslint-config": "*",
+    "@sdks/typescript-config": "*",
     "husky": "^8.0.3",
     "lint-staged": "^15.2.0",
     "prettier": "^3.1.0",
@@ -35,6 +35,6 @@
   "packageManager": "yarn@4.0.2",
   "workspaces": [
     "apps/*",
-    "sdk/*"
+    "sdks/*"
   ]
 }

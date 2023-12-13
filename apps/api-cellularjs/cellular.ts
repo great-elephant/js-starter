@@ -9,7 +9,7 @@ const cellularConfig: CellularConfig = {
     // override exist nodeExternals
     config.externals = [
       nodeExternals({
-        allowlist: [/@sdk/],
+        allowlist: [/@sdks/],
       }),
     ];
 

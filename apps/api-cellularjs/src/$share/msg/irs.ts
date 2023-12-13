@@ -1,5 +1,5 @@
 import { IRS } from '@cellularjs/net';
-// import { any, any, MetaData } from "@sdk/types";
+// import { any, any, MetaData } from "@sdks/types";
 
 export function Success<D>(body: { data: D; meta: any }) {
   return new IRS({ status: 200 }, body);

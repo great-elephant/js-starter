@@ -7,12 +7,7 @@ EnvModule.config({ token: Env });
 
 export const dataSource = new DataSource({
   type: 'postgres',
-  host: env().DB_HOST,
-  port: env().DB_PORT,
-  username: env().DB_USER,
-  password: env().DB_PASSWORD,
-  database: env().DB_NAME,
-  schema: env().DB_SCHEMA_NAME,
+  url: env().DB_URL,
   migrations: [
     path.resolve(__dirname, 'db/migrations/*.ts'),
   ],

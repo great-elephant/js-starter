@@ -9,12 +9,7 @@ import { Env, env } from '$share/env';
     EnvModule.config({ token: Env }),
     TypeOrmModule.initialize({
       type: 'postgres',
-      host: env().DB_HOST,
-      port: env().DB_PORT,
-      username: env().DB_USER,
-      password: env().DB_PASSWORD,
-      database: env().DB_NAME,
-      schema: env().DB_SCHEMA_NAME,
+      url: env().DB_URL,
     }),
   ],
 })

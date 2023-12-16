@@ -4,22 +4,22 @@ import { Repository } from '@cellularjs/typeorm';
 @Entity('user_registration')
 export class UserRegistrationEntity {
   @PrimaryGeneratedColumn('uuid')
-    id: string;
+  id: string;
 
   @Column()
-    firstName: string;
+  firstName: string;
 
   @Column()
-    lastName: string;
+  lastName: string;
 
   @Column()
-    email: string;
+  email: string;
 
   @Column()
-    password: string;
+  password: string;
 
   @Column({ type: 'timestamptz', default: () => 'CURRENT_TIMESTAMP' })
-    createdAt: string;
+  createdAt: string;
 
   /**
    * 6 digits for account activation(email verification).
@@ -27,7 +27,7 @@ export class UserRegistrationEntity {
    * Eg: '182912'
    */
   @Column()
-    activeKey: string;
+  activeKey: string;
 }
 
 export interface UserRegistrationRepository extends TypeOrmRepository<UserRegistrationEntity> { }

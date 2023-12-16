@@ -981,6 +981,7 @@ __metadata:
     "@sdks/api-runner": "npm:*"
     "@sdks/eslint-config": "npm:*"
     "@sdks/types-shared": "npm:*"
+    eslint: "npm:^8.53.0"
     typescript: "npm:^5.2.2"
   languageName: unknown
   linkType: soft
@@ -993,6 +994,7 @@ __metadata:
     "@sdks/api-runner": "npm:*"
     "@sdks/eslint-config": "npm:*"
     "@sdks/types-shared": "npm:*"
+    eslint: "npm:^8.53.0"
     typescript: "npm:^5.2.2"
   languageName: unknown
   linkType: soft
@@ -1003,6 +1005,7 @@ __metadata:
   dependencies:
     "@sdks/eslint-config": "npm:*"
     "@sdks/types-shared": "npm:*"
+    eslint: "npm:^8.53.0"
     typescript: "npm:^5.2.2"
   languageName: unknown
   linkType: soft
@@ -1024,6 +1027,8 @@ __metadata:
 "@sdks/types-shared@npm:*, @sdks/types-shared@workspace:sdks/types-shared":
   version: 0.0.0-use.local
   resolution: "@sdks/types-shared@workspace:sdks/types-shared"
+  dependencies:
+    eslint: "npm:^8.53.0"
   languageName: unknown
   linkType: soft
 

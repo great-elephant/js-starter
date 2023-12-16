@@ -18,10 +18,10 @@ const clientRunner = new DefaultRunner({
 
 const client = new Client({
   runner: clientRunner,
-})
+});
 
 export function Test() {
-  const register = useQuery(client.user.register)
+  const register = useQuery(client.user.register);
 
   return (
     <div className='flex flex-col'>
@@ -29,10 +29,10 @@ export function Test() {
         firstName: '',
         lastName: '',
         email: '',
-        password: ''
+        password: '',
       })}>Button</button>
 
       <Link href={'/about'}>about</Link>
     </div>
-  )
+  );
 }

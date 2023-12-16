@@ -4,28 +4,28 @@ import { Repository } from '@cellularjs/typeorm';
 @Entity('user_profile')
 export class UserProfileEntity {
   @PrimaryColumn()
-    id: number;
+  id: number;
 
   @Column()
-    pid: string;
+  pid: string;
 
   @Column()
-    firstName: string;
+  firstName: string;
 
   @Column()
-    lastName: string;
+  lastName: string;
 
   @Column()
-    email: string;
+  email: string;
 
   @Column()
-    password: string;
+  password: string;
 
   @Column({ default: null })
-    avatar: string;
+  avatar: string;
 
   @Column({ type: 'timestamptz' })
-    createdAt: string;
+  createdAt: string;
 }
 
 export interface UserProfileRepository extends TypeOrmRepository<UserProfileEntity> { }

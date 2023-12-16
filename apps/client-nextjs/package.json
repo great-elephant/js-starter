@@ -10,6 +10,8 @@
     "lint": "eslint . --fix"
   },
   "dependencies": {
+    "@sdks/api-client": "*",
+    "@sdks/api-hook": "*",
     "@sdks/uikit": "*",
     "next": "^14.0.3",
     "react": "^18.2.0",

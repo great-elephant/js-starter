@@ -3,6 +3,7 @@ import { Card } from '@sdks/uikit/card';
 import { Code } from '@sdks/uikit/code';
 import styles from './page.module.css';
 import { Button } from '@sdks/uikit/button';
+import { Test } from './test';
 
 function Gradient({
   conic,
@@ -82,6 +83,7 @@ export default function Page(): JSX.Element {
         Click me!
       </Button>
 
+      <Test />
       <div className={styles.hero}>
         <div className={styles.heroContent}>
           <div className={styles.logos}>

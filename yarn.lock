@@ -64,6 +64,8 @@ __metadata:
   dependencies:
     "@next/bundle-analyzer": "npm:^14.0.4"
     "@next/eslint-plugin-next": "npm:^14.0.2"
+    "@sdks/api-client": "npm:*"
+    "@sdks/api-hook": "npm:*"
     "@sdks/eslint-config": "npm:*"
     "@sdks/typescript-config": "npm:*"
     "@sdks/uikit": "npm:*"
@@ -966,6 +968,39 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@sdks/api-client@npm:*, @sdks/api-client@workspace:sdks/api-client":
+  version: 0.0.0-use.local
+  resolution: "@sdks/api-client@workspace:sdks/api-client"
+  dependencies:
+    "@sdks/api-runner": "npm:*"
+    "@sdks/eslint-config": "npm:*"
+    "@sdks/types-shared": "npm:*"
+    typescript: "npm:^5.2.2"
+  languageName: unknown
+  linkType: soft
+
+"@sdks/api-hook@npm:*, @sdks/api-hook@workspace:sdks/api-hook":
+  version: 0.0.0-use.local
+  resolution: "@sdks/api-hook@workspace:sdks/api-hook"
+  dependencies:
+    "@sdks/api-client": "npm:*"
+    "@sdks/api-runner": "npm:*"
+    "@sdks/eslint-config": "npm:*"
+    "@sdks/types-shared": "npm:*"
+    typescript: "npm:^5.2.2"
+  languageName: unknown
+  linkType: soft
+
+"@sdks/api-runner@npm:*, @sdks/api-runner@workspace:sdks/api-runner":
+  version: 0.0.0-use.local
+  resolution: "@sdks/api-runner@workspace:sdks/api-runner"
+  dependencies:
+    "@sdks/eslint-config": "npm:*"
+    "@sdks/types-shared": "npm:*"
+    typescript: "npm:^5.2.2"
+  languageName: unknown
+  linkType: soft
+
 "@sdks/eslint-config@npm:*, @sdks/eslint-config@workspace:sdks/eslint-config":
   version: 0.0.0-use.local
   resolution: "@sdks/eslint-config@workspace:sdks/eslint-config"
@@ -977,6 +1012,12 @@ __metadata:
     eslint-config-turbo: "npm:^1.10.12"
     eslint-plugin-only-warn: "npm:^1.1.0"
     typescript: "npm:^5.2.2"
+  languageName: unknown
+  linkType: soft
+
+"@sdks/types-shared@npm:*, @sdks/types-shared@workspace:sdks/types-shared":
+  version: 0.0.0-use.local
+  resolution: "@sdks/types-shared@workspace:sdks/types-shared"
   languageName: unknown
   linkType: soft
 

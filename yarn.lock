@@ -33,13 +33,13 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@app/api-cellularjs@workspace:apps/api-cellularjs"
   dependencies:
-    "@cellularjs/cli": "npm:^0.18.0"
-    "@cellularjs/di": "npm:^0.18.0"
-    "@cellularjs/env": "npm:^0.18.0"
-    "@cellularjs/express-proxy": "npm:^0.18.0"
-    "@cellularjs/logger": "npm:^0.18.0"
-    "@cellularjs/net": "npm:^0.18.0"
-    "@cellularjs/typeorm": "npm:^0.18.0"
+    "@cellularjs/cli": "npm:^0.18.1"
+    "@cellularjs/di": "npm:^0.18.1"
+    "@cellularjs/env": "npm:^0.18.1"
+    "@cellularjs/express-proxy": "npm:^0.18.1"
+    "@cellularjs/logger": "npm:^0.18.1"
+    "@cellularjs/net": "npm:^0.18.1"
+    "@cellularjs/typeorm": "npm:^0.18.1"
     "@sdks/eslint-config": "npm:*"
     "@types/cors": "npm:^2.8.13"
     "@types/express": "npm:^4.17.17"
@@ -56,6 +56,7 @@ __metadata:
     eslint: "npm:^8.53.0"
     express: "npm:^4.18.2"
     multer: "npm:^1.4.5-lts.1"
+    nanoid: "npm:^5.0.4"
     pg: "npm:^8.11.3"
     ts-node: "npm:^10.9.1"
     typeorm: "npm:^0.3.17"
@@ -348,9 +349,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@cellularjs/cli@npm:^0.18.0":
-  version: 0.18.0
-  resolution: "@cellularjs/cli@npm:0.18.0"
+"@cellularjs/cli@npm:^0.18.1":
+  version: 0.18.1
+  resolution: "@cellularjs/cli@npm:0.18.1"
   dependencies:
     chalk: "npm:4"
     clui: "npm:^0.3.6"
@@ -369,60 +370,60 @@ __metadata:
     webpackbar: "npm:^5.0.2"
   bin:
     cellular: dist/cmd/index.js
-  checksum: 1bc540d41c3cb0d76abd0de16a68829e2e9447f4ef65099a24040eaa41963b1527a97d67ac91b4ea738376cd295527f0542be52f1c511ca34967ff7e0f1a6975
+  checksum: 0e2eeffd6bb6a3abdcecb98bf03496306e7bca3482bb7d4363872bb86e934282980ca0267f7c8ff5bc05c3fa4b7eb95abd79d6b2b9bf0181fac16800adad0b22
   languageName: node
   linkType: hard
 
-"@cellularjs/di@npm:^0.18.0":
-  version: 0.18.0
-  resolution: "@cellularjs/di@npm:0.18.0"
+"@cellularjs/di@npm:^0.18.1":
+  version: 0.18.1
+  resolution: "@cellularjs/di@npm:0.18.1"
   dependencies:
     reflect-metadata: "npm:^0.1.13"
-  checksum: 4f05c1d3f11efe397b35072cf80ee1543cd3ef416c317415de3506b011c20188e212e9988c426f8144daade46dae9f25abd14f5fb67314872610f19149492660
+  checksum: 00eb46fafcf21711f50a904ddaae09d680f47c6986c59ff02f42954222c9cb67a9ffc59ab9670a8b497329728b00856fc01f027c81ebc1837915b13ca33ee1cf
   languageName: node
   linkType: hard
 
-"@cellularjs/env@npm:^0.18.0":
-  version: 0.18.0
-  resolution: "@cellularjs/env@npm:0.18.0"
+"@cellularjs/env@npm:^0.18.1":
+  version: 0.18.1
+  resolution: "@cellularjs/env@npm:0.18.1"
   dependencies:
-    "@cellularjs/di": "npm:^0.18.0"
+    "@cellularjs/di": "npm:^0.18.1"
     dotenv-flow: "npm:^3.2.0"
-  checksum: 7896b3be3e1096637f937c291bac300d5ab9c76249a0974cc7420884882bb345c02979a1a095ac3ee3a43be0bf6f82976a3928a8db5abc3ab892e869e00135fe
+  checksum: b667d2dec72da62fbdfa54fd8d31c0c5e57000a129d212458edb4710fc8bfe7440be9ec969f51c7fbdc322bad62bccd046bdf5ec8d211e842659f5b3d357b6bd
   languageName: node
   linkType: hard
 
-"@cellularjs/express-proxy@npm:^0.18.0":
-  version: 0.18.0
-  resolution: "@cellularjs/express-proxy@npm:0.18.0"
-  checksum: 5ba73c08bde8a30d9a13facbbc3371fd21e93980abec2aea1260c839b0fce5c955401f3488e9dcbd502de538373bfbbbdffcaadfbe206ce06c8015ed7f4a1962
+"@cellularjs/express-proxy@npm:^0.18.1":
+  version: 0.18.1
+  resolution: "@cellularjs/express-proxy@npm:0.18.1"
+  checksum: 2d0b09832be810485e91aa9959b80b65a221e9fb24dde0faf1029653e9456c898693ed903f37b96b651af6955fa87edd03b3ef78821e4bbbabc940c9aff790e6
   languageName: node
   linkType: hard
 
-"@cellularjs/logger@npm:^0.18.0":
-  version: 0.18.0
-  resolution: "@cellularjs/logger@npm:0.18.0"
-  checksum: 2889a28da60c327d6d6e3cbc08d42d9fb2cf8dc7c103e47f8c49673e6d3227e93d0ace7a1ac012c61e25bc10ed6fb18bfd703d11563fa3d80870993612d60574
+"@cellularjs/logger@npm:^0.18.1":
+  version: 0.18.1
+  resolution: "@cellularjs/logger@npm:0.18.1"
+  checksum: 69806e1c718594fe4e80dca2aa1e62f484cf70221194974303aab92190dc4178f9e14cbd8e6b7da9d5f230d4fef2b3ea70a48f4810b03d69f2e4a991269b8203
   languageName: node
   linkType: hard
 
-"@cellularjs/net@npm:^0.18.0":
-  version: 0.18.0
-  resolution: "@cellularjs/net@npm:0.18.0"
+"@cellularjs/net@npm:^0.18.1":
+  version: 0.18.1
+  resolution: "@cellularjs/net@npm:0.18.1"
   dependencies:
-    "@cellularjs/di": "npm:^0.18.0"
+    "@cellularjs/di": "npm:^0.18.1"
     emittery: "npm:^0.10.0"
-  checksum: 3fb641c2317a85277b7bbf85cb850b5e93403777e85bbd9d578aced24c682dcb6074faa35387eb5d8e50f0d0cab4ab2494e674709312bf28fffc5a2630bf5cc8
+  checksum: 162b994ff02db53dcd8c727e4a7be18eca479e13164dd6e0689e1ba0f7a7bf3db8a4f455639c01f1ce3a25b8b64475a30b51649dc5d5bc78f908fa0a27b7e945
   languageName: node
   linkType: hard
 
-"@cellularjs/typeorm@npm:^0.18.0":
-  version: 0.18.0
-  resolution: "@cellularjs/typeorm@npm:0.18.0"
+"@cellularjs/typeorm@npm:^0.18.1":
+  version: 0.18.1
+  resolution: "@cellularjs/typeorm@npm:0.18.1"
   dependencies:
-    "@cellularjs/di": "npm:^0.18.0"
-    "@cellularjs/net": "npm:^0.18.0"
-  checksum: b0dcd7f60e75cfa33da313acd09d0e3abb57d39d6060131aa1c4f4f48858e4b6c764c0a7c07b4381ff0fecc0ffc441a14a85e2cfd03e0c13947d208efe3148cc
+    "@cellularjs/di": "npm:^0.18.1"
+    "@cellularjs/net": "npm:^0.18.1"
+  checksum: c52997d8ce05b1407b76bb9f2511be666a5e11d4e3b231c1449a9738b993650b360f6dbb334896b946d9cee90d7aff757b8903e045fa686dc030201dab44886b
   languageName: node
   linkType: hard
 
@@ -6641,6 +6642,15 @@ __metadata:
   bin:
     nanoid: bin/nanoid.cjs
   checksum: e3fb661aa083454f40500473bb69eedb85dc160e763150b9a2c567c7e9ff560ce028a9f833123b618a6ea742e311138b591910e795614a629029e86e180660f3
+  languageName: node
+  linkType: hard
+
+"nanoid@npm:^5.0.4":
+  version: 5.0.4
+  resolution: "nanoid@npm:5.0.4"
+  bin:
+    nanoid: bin/nanoid.js
+  checksum: 28c22d3ff96ea9e6abc059813b8483890c1f52de0f185d8347b0ea205c5966530205c374f1f77492bb53dc5d649de5d36d6eade16645055eb9220dc62080c1b1
   languageName: node
   linkType: hard
 

@@ -8,6 +8,7 @@ module.exports = {
     '@typescript-eslint/no-explicit-any': 'off',
     '@typescript-eslint/no-empty-function': 'off',
     '@typescript-eslint/no-var-requires': 'off',
+    '@typescript-eslint/no-unsafe-declaration-merging': 'off',
     'jsx-quotes': ['error', 'prefer-single'],
     'quotes': ['error', 'single'],
     'no-var': 'off',

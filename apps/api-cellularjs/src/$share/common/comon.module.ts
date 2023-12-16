@@ -3,6 +3,7 @@ import { EnvModule } from '@cellularjs/env';
 import { getLogger } from '@cellularjs/logger';
 import { TypeOrmModule } from '@cellularjs/typeorm';
 import { Env, env } from '$share/env';
+import '../typeorm';
 
 @Module({
   exports: [

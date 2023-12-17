@@ -1,4 +1,4 @@
-import { CellularConfig } from '@cellularjs/cli';
+import type { CellularConfig } from '@cellularjs/cli';
 import * as nodeExternals from 'webpack-node-externals';
 
 const cellularConfig: CellularConfig = {
@@ -9,7 +9,10 @@ const cellularConfig: CellularConfig = {
     // override exist nodeExternals
     config.externals = [
       nodeExternals({
-        allowlist: [/@sdks/],
+        allowlist: [
+          /@sdks/,
+          'nanoid',
+        ],
       }),
     ];
 

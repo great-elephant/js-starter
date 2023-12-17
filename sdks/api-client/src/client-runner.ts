@@ -4,7 +4,7 @@ type RequestOptions = RequestInit & {
   onError?: 'throwOriginal' | 'body'
 };
 
-export type Options = Omit<RequestOptions, 'body'> & {
+export type SendOptions = Omit<RequestOptions, 'body'> & {
   body?: FormData | { [k: string]: any },
 }
 
@@ -13,7 +13,7 @@ export type Options = Omit<RequestOptions, 'body'> & {
  */
 export interface ClientRunner {
   readonly API_BASE_URL: string;
-  send<D>(input: RequestInfo, options?: Options): Promise<SuccessResponse<D>>;
+  send<D>(input: RequestInfo, options?: SendOptions): Promise<SuccessResponse<D>>;
 }
 
 type Headers = { [key: string]: any }
@@ -33,7 +33,7 @@ export class DefaultRunner implements ClientRunner {
     return this.opts.API_BASE_URL;
   }
 
-  async send<Data>(input: RequestInfo, options?: Options): Promise<SuccessResponse<Data>> {
+  async send<Data>(input: RequestInfo, options?: SendOptions): Promise<SuccessResponse<Data>> {
     const response = await fetch(...this.initParams(input, options));
     let body: SuccessResponse<Data> = { data: null as Data };
 
@@ -49,7 +49,7 @@ export class DefaultRunner implements ClientRunner {
     return body;
   }
 
-  private initParams(input: RequestInfo, options?: Options):
+  private initParams(input: RequestInfo, options?: SendOptions):
     [RequestInfo, RequestInit | undefined] {
     const isFormData = typeof FormData !== 'undefined' && options?.body instanceof FormData;
 

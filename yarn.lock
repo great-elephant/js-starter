@@ -99,6 +99,7 @@ __metadata:
     "@next/eslint-plugin-next": "npm:^14.0.2"
     "@sdks/api-client": "npm:*"
     "@sdks/api-hook": "npm:*"
+    "@sdks/api-react-query": "npm:*"
     "@sdks/eslint-config": "npm:*"
     "@sdks/typescript-config": "npm:*"
     "@sdks/uikit-react": "npm:*"
@@ -1026,6 +1027,20 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@sdks/api-react-query@npm:*, @sdks/api-react-query@workspace:sdks/api-react-query":
+  version: 0.0.0-use.local
+  resolution: "@sdks/api-react-query@workspace:sdks/api-react-query"
+  dependencies:
+    "@sdks/api-client": "npm:*"
+    "@sdks/api-runner": "npm:*"
+    "@sdks/eslint-config": "npm:*"
+    "@sdks/types-shared": "npm:*"
+    "@tanstack/react-query": "npm:^5.14.0"
+    eslint: "npm:^8.53.0"
+    typescript: "npm:^5.2.2"
+  languageName: unknown
+  linkType: soft
+
 "@sdks/api-runner@npm:*, @sdks/api-runner@workspace:sdks/api-runner":
   version: 0.0.0-use.local
   resolution: "@sdks/api-runner@workspace:sdks/api-runner"
@@ -1095,6 +1110,24 @@ __metadata:
   dependencies:
     tslib: "npm:^2.4.0"
   checksum: b6fa49bcf6c00571d0eb7837b163f8609960d4d77538160585e27ed167361e9776bd6e5eb9646ffac2fb4d43c58df9ca50dab9d96ab097e6591bc82a75fd1164
+  languageName: node
+  linkType: hard
+
+"@tanstack/query-core@npm:5.14.0":
+  version: 5.14.0
+  resolution: "@tanstack/query-core@npm:5.14.0"
+  checksum: 4e0b12a07b8622deece3bfe942adc9a9961f0cd9471db97b6f4074ec7359d819633f1d9239240f31d91f4a6b3f789466b3c27ffdb86ff37ddeb2140485a407ca
+  languageName: node
+  linkType: hard
+
+"@tanstack/react-query@npm:^5.14.0":
+  version: 5.14.0
+  resolution: "@tanstack/react-query@npm:5.14.0"
+  dependencies:
+    "@tanstack/query-core": "npm:5.14.0"
+  peerDependencies:
+    react: ^18.0.0
+  checksum: 43f9a0eb5e183c94e8196eb1118e9b6ea0a0aecadb2bb838281e71e20614477030a46c730e9b19831bddc063b8d486b2d09518fb0a72dabadfca71714109864e
   languageName: node
   linkType: hard
 

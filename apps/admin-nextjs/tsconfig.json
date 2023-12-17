@@ -1,0 +1,23 @@
+{
+  "extends": "@sdks/typescript-config/nextjs.json",
+  "compilerOptions": {
+    // https://github.com/microsoft/TypeScript/issues/53286
+    "useDefineForClassFields": false,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "incremental": true
+  },
+  "include": [
+    "next-env.d.ts",
+    "next.config.js",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}

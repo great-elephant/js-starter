@@ -7,7 +7,7 @@ import {
 } from './type';
 import { APICaller } from '@sdks/api-runner';
 import { ClientRunner, overrideCaller } from '@sdks/api-client';
-import { Options } from '@sdks/api-client/src/client-runner';
+import { SendOptions } from '@sdks/api-client';
 
 export function useRequest<Caller extends APICaller<ClientRunner>>(
   caller: Caller,
@@ -39,7 +39,7 @@ export function useRequest<Caller extends APICaller<ClientRunner>>(
           API_BASE_URL: originalRunner.API_BASE_URL,
 
           send: async (input, options) => {
-            const opts: Options = {
+            const opts: SendOptions = {
               ...options,
               signal: abortCtrlRef.current.signal,
             };

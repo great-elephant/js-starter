@@ -1,3 +1,4 @@
+import { UserRegisterData } from '@sdks/types-shared';
 import { ClientRunner } from '../../client-runner';
 
 export interface RegisterParams {
@@ -8,7 +9,7 @@ export interface RegisterParams {
 }
 
 export function register(this: ClientRunner, params: RegisterParams) {
-  return this.send<{ id: string }>(`${this.API_BASE_URL}/user/register`, {
+  return this.send<UserRegisterData>(`${this.API_BASE_URL}/user`, {
     method: 'post',
     body: params,
   });

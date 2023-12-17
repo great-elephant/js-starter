@@ -1,5 +1,6 @@
-import './globals.scss';
+import { ClienContainer } from '@/helper/client-container';
 import type { Metadata } from 'next';
+import './globals.scss';
 
 export const metadata: Metadata = {
   title: 'Create Turborepo',
@@ -13,7 +14,11 @@ export default function RootLayout({
 }): JSX.Element {
   return (
     <html lang='en'>
-      <body>{children}</body>
+      <body>
+        <ClienContainer>
+          {children}
+        </ClienContainer>
+      </body>
     </html>
   );
 }

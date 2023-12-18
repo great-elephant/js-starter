@@ -7,7 +7,8 @@ export function configRoutes(app: Express) {
   const userRouter = Router();
   userRouter.post('/', proxyTo('User:UserRegisterCmd'));
   userRouter.post('/activate', proxyTo('User:UserActivateCmd'));
-
+  userRouter.post('/login', proxyTo('User:UserLoginQry'));
+  userRouter.get('/my-info', proxyTo('User:UserMyInfoQry'));
 
   app.use('/api/user', userRouter);
 }

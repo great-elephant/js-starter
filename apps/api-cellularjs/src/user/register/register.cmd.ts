@@ -31,6 +31,8 @@ export class UserRegisterCmd implements ServiceHandler {
     const hashedPwd = await crypto.hash(registerReq.password);
     const activeKey = `${Math.floor(100000 + Math.random() * 899999)}`;
 
+    await userRegistrationRepo.delete({ email: registerReq.email });
+
     const { id } = await userRegistrationRepo.save({
       email: registerReq.email,
       firstName: registerReq.firstName,

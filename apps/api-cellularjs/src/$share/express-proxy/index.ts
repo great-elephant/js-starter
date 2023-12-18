@@ -5,7 +5,7 @@ import {
   OutputTransform,
 } from '@cellularjs/express-proxy';
 import { getLogger } from '@cellularjs/logger';
-import * as multer from 'multer';
+import multer from 'multer';
 import { NextFunction, Request } from 'express';
 
 const KEY_ACCESS_TOKEN = 'jwt';

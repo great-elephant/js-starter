@@ -1,6 +1,6 @@
-import * as express from 'express';
-import * as cors from 'cors';
-import * as cookieParser from 'cookie-parser';
+import express from 'express';
+import cors from 'cors';
+import cookieParser from 'cookie-parser';
 import { IRS, transportListener } from '@cellularjs/net';
 import { getLogger } from '@cellularjs/logger';
 import { createServer } from 'http';

@@ -8,10 +8,19 @@
     "declaration": false,
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
-    "types": ["node"],
-    "lib": ["es7"],
+    "esModuleInterop": true,
+    "types": [
+      "node"
+    ],
+    "lib": [
+      "es7"
+    ],
     "moduleResolution": "node"
   },
-  "includes": ["./src/**/*"],
-  "exclude": ["node_modules"]
+  "includes": [
+    "./src/**/*"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
 }

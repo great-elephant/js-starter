@@ -1,5 +1,5 @@
 import type { CellularConfig } from '@cellularjs/cli';
-import * as nodeExternals from 'webpack-node-externals';
+import nodeExternals from 'webpack-node-externals';
 
 const cellularConfig: CellularConfig = {
   entry: {

@@ -41,7 +41,6 @@ export class UserActivateCmd implements ServiceHandler {
       msg: ('oidc.err.email_in_use'),
     });
 
-    // TODO: using another process to delete old registration.
     await userRegistrationRepo.delete({ email: userRegistration.email });
 
     await userRepo.save({

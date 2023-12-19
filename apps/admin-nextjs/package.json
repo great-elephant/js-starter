@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "@sdks/api-admin": "*",
-    "@sdks/api-hook": "*",
+    "@sdks/api-react-query": "*",
     "@sdks/uikit-react": "*",
     "next": "^14.0.3",
     "react": "^18.2.0",

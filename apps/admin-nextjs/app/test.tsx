@@ -1,7 +1,7 @@
 'use client';
 import { AdminClient } from '@sdks/api-admin';
 import { DefaultRunner } from '@sdks/api-admin';
-import { useQuery } from '@sdks/api-hook';
+import { useCommand } from '@sdks/api-react-query';
 import Link from 'next/link';
 
 const clientRunner = new DefaultRunner({
@@ -21,7 +21,7 @@ const client = new AdminClient({
 });
 
 export function Test() {
-  const register = useQuery(client.user.lockAccount);
+  const register = useCommand(client.user.lockAccount);
 
   return (
     <div className='flex flex-col'>

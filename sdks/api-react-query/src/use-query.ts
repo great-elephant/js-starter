@@ -1,6 +1,6 @@
 import { useQueryClient, useQuery as useQueryTs } from '@tanstack/react-query';
 import { ClientRunner, SendOptions, overrideCaller } from '@sdks/api-client';
-import { APICaller } from '@sdks/api-runner';
+import { APICaller } from '@sdks/api-core';
 import { ErrorResponse, SuccessResponse } from '@sdks/types-shared';
 import { UseRequestOptions, UseRequestReturn } from './type';
 

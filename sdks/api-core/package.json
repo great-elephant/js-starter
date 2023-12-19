@@ -1,5 +1,5 @@
 {
-  "name": "@sdks/api-client",
+  "name": "@sdks/api-core",
   "version": "0.0.0",
   "main": "./src/index.ts",
   "types": "./src/index.ts",

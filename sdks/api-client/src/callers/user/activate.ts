@@ -1,4 +1,4 @@
-import { ClientRunner } from '../../client-runner';
+import { ClientRunner } from '@sdks/api-core';
 
 export interface ActivateParams {
   sid: string;

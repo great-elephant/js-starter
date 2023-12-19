@@ -1,4 +1,4 @@
-import { BIND_FUNC, ORIGINAL_RUNNER } from './client';
+import { BIND_FUNC, ORIGINAL_RUNNER } from './constants';
 
 type CallerFunc = (...args: any[]) => Promise<any>;
 

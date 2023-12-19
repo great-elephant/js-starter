@@ -35,7 +35,7 @@ __metadata:
   dependencies:
     "@next/bundle-analyzer": "npm:^14.0.4"
     "@next/eslint-plugin-next": "npm:^14.0.2"
-    "@sdks/api-client": "npm:*"
+    "@sdks/api-admin": "npm:*"
     "@sdks/api-hook": "npm:*"
     "@sdks/eslint-config": "npm:*"
     "@sdks/typescript-config": "npm:*"
@@ -1003,11 +1003,35 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@sdks/api-admin@npm:*, @sdks/api-admin@workspace:sdks/api-admin":
+  version: 0.0.0-use.local
+  resolution: "@sdks/api-admin@workspace:sdks/api-admin"
+  dependencies:
+    "@sdks/api-core": "npm:*"
+    "@sdks/eslint-config": "npm:*"
+    "@sdks/types-shared": "npm:*"
+    eslint: "npm:^8.53.0"
+    typescript: "npm:^5.2.2"
+  languageName: unknown
+  linkType: soft
+
 "@sdks/api-client@npm:*, @sdks/api-client@workspace:sdks/api-client":
   version: 0.0.0-use.local
   resolution: "@sdks/api-client@workspace:sdks/api-client"
   dependencies:
-    "@sdks/api-runner": "npm:*"
+    "@sdks/api-core": "npm:*"
+    "@sdks/eslint-config": "npm:*"
+    "@sdks/types-shared": "npm:*"
+    eslint: "npm:^8.53.0"
+    typescript: "npm:^5.2.2"
+  languageName: unknown
+  linkType: soft
+
+"@sdks/api-core@npm:*, @sdks/api-core@workspace:sdks/api-core":
+  version: 0.0.0-use.local
+  resolution: "@sdks/api-core@workspace:sdks/api-core"
+  dependencies:
+    "@sdks/api-core": "npm:*"
     "@sdks/eslint-config": "npm:*"
     "@sdks/types-shared": "npm:*"
     eslint: "npm:^8.53.0"
@@ -1019,8 +1043,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@sdks/api-hook@workspace:sdks/api-hook"
   dependencies:
-    "@sdks/api-client": "npm:*"
-    "@sdks/api-runner": "npm:*"
+    "@sdks/api-core": "npm:*"
     "@sdks/eslint-config": "npm:*"
     "@sdks/types-shared": "npm:*"
     eslint: "npm:^8.53.0"
@@ -1033,21 +1056,10 @@ __metadata:
   resolution: "@sdks/api-react-query@workspace:sdks/api-react-query"
   dependencies:
     "@sdks/api-client": "npm:*"
-    "@sdks/api-runner": "npm:*"
+    "@sdks/api-core": "npm:*"
     "@sdks/eslint-config": "npm:*"
     "@sdks/types-shared": "npm:*"
     "@tanstack/react-query": "npm:^5.14.0"
-    eslint: "npm:^8.53.0"
-    typescript: "npm:^5.2.2"
-  languageName: unknown
-  linkType: soft
-
-"@sdks/api-runner@npm:*, @sdks/api-runner@workspace:sdks/api-runner":
-  version: 0.0.0-use.local
-  resolution: "@sdks/api-runner@workspace:sdks/api-runner"
-  dependencies:
-    "@sdks/eslint-config": "npm:*"
-    "@sdks/types-shared": "npm:*"
     eslint: "npm:^8.53.0"
     typescript: "npm:^5.2.2"
   languageName: unknown

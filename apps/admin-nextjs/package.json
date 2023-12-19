@@ -10,7 +10,7 @@
     "lint": "eslint . --fix"
   },
   "dependencies": {
-    "@sdks/api-client": "*",
+    "@sdks/api-admin": "*",
     "@sdks/api-hook": "*",
     "@sdks/uikit-react": "*",
     "next": "^14.0.3",

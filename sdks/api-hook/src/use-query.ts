@@ -1,5 +1,5 @@
-import { ClientRunner } from '@sdks/api-client';
-import { APICaller } from '@sdks/api-runner';
+import { ClientRunner } from '@sdks/api-core';
+import { APICaller } from '@sdks/api-core';
 import { UseRequestOptions } from './type';
 import { useRequest } from './use-request';
 

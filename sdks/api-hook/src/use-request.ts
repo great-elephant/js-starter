@@ -5,9 +5,8 @@ import {
   UseRequestOptions,
   UseRequestReturn,
 } from './type';
-import { APICaller } from '@sdks/api-runner';
-import { ClientRunner, overrideCaller } from '@sdks/api-client';
-import { SendOptions } from '@sdks/api-client';
+import { APICaller } from '@sdks/api-core';
+import { ClientRunner, SendOptions, overrideCaller } from '@sdks/api-core';
 
 export function useRequest<Caller extends APICaller<ClientRunner>>(
   caller: Caller,

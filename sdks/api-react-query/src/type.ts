@@ -1,5 +1,5 @@
 import { ErrorResponse, MetaData } from '@sdks/types-shared';
-import { APICaller } from '@sdks/api-runner';
+import { APICaller } from '@sdks/api-core';
 import { ClientRunner } from '@sdks/api-client';
 
 export type UseRequestOptions<Caller extends APICaller<ClientRunner>> = {

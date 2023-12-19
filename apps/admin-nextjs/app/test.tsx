@@ -1,6 +1,6 @@
 'use client';
-import { Client } from '@sdks/api-client';
-import { DefaultRunner } from '@sdks/api-client/src/client-runner';
+import { AdminClient } from '@sdks/api-admin';
+import { DefaultRunner } from '@sdks/api-admin';
 import { useQuery } from '@sdks/api-hook';
 import Link from 'next/link';
 
@@ -16,20 +16,17 @@ const clientRunner = new DefaultRunner({
   },
 });
 
-const client = new Client({
+const client = new AdminClient({
   runner: clientRunner,
 });
 
 export function Test() {
-  const register = useQuery(client.user.register);
+  const register = useQuery(client.user.lockAccount);
 
   return (
     <div className='flex flex-col'>
       <button onClick={() => register.invoke({
-        firstName: '',
-        lastName: '',
-        email: '',
-        password: '',
+        usrPid: '',
       })}>Button</button>
 
       <Link href={'/about'}>about</Link>

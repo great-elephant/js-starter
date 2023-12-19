@@ -8,8 +8,7 @@
     "lint": "eslint src/**/*.ts --fix"
   },
   "devDependencies": {
-    "@sdks/api-client": "*",
-    "@sdks/api-runner": "*",
+    "@sdks/api-core": "*",
     "@sdks/eslint-config": "*",
     "@sdks/types-shared": "*",
     "eslint": "^8.53.0",

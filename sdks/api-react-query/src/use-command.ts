@@ -1,7 +1,7 @@
 import { useMutation } from '@tanstack/react-query';
 import { ErrorResponse, SuccessResponse } from '@sdks/types-shared';
 import { ClientRunner, SendOptions, overrideCaller } from '@sdks/api-client';
-import { APICaller } from '@sdks/api-runner';
+import { APICaller } from '@sdks/api-core';
 import { UseRequestReturn } from './type';
 import { useAbort } from './use-abort';
 

@@ -1,3 +1,8 @@
+export enum AdminRole {
+  SUPER_ADMIN = 1,
+  ADMIN = 2,
+}
+
 export type UserRegisterData = {
   /**
    * Registration session id.
@@ -14,15 +19,14 @@ export type MyInfoData = {
   createdAt: string;
 }
 
-export type UserAuthData = {
-  pid: string;
+export type AdminAuthData = {
+  id: number;
+  role: AdminRole;
   accessToken: string;
-  refreshToken?: string;
 }
 
-export type UserTokenClaims = {
-  pid: string;
+export type AdminTokenClaims = {
+  id: number;
+  role: AdminRole;
   exp: number;
 }
-
-export type RefreshTokenClaims = Omit<UserTokenClaims, 'exp'>;

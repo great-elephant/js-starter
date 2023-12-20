@@ -2,7 +2,7 @@
 module.exports = {
   content: [
     './app/**/*.{ts,tsx}',
-    '../../sdks/uikit/src/**/*.{ts,tsx}',
+    '../../sdks/uikit-react/src/**/*.{ts,tsx}',
   ],
   theme: {
     extend: {},

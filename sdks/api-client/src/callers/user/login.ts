@@ -1,4 +1,4 @@
-import { AuthData } from '@sdks/types-shared';
+import { UserAuthData } from '@sdks/types-shared';
 import { ClientRunner } from '@sdks/api-core';
 
 export interface LoginParams {
@@ -7,7 +7,7 @@ export interface LoginParams {
 }
 
 export function login(this: ClientRunner, params: LoginParams) {
-  return this.send<AuthData>(`${this.API_BASE_URL}/user/login`, {
+  return this.send<UserAuthData>(`${this.API_BASE_URL}/user/login`, {
     method: 'post',
     body: params,
   });

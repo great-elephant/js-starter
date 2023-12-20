@@ -9,7 +9,8 @@
     ".": {
       "react-server": "./src/server.ts",
       "default": "./src/index.ts"
-    }
+    },
+    "./form-reactive": "./src/form-reactive/index.tsx"
   },
   "sideEffects": false,
   "devDependencies": {
@@ -22,5 +23,11 @@
     "eslint": "^8.53.0",
     "react": "^18.2.0",
     "typescript": "^5.2.2"
+  },
+  "dependencies": {
+    "@hookform/resolvers": "^3.3.2",
+    "clsx": "^2.0.0",
+    "react-hook-form": "^7.49.2",
+    "yup": "^1.3.3"
   }
 }

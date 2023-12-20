@@ -2,19 +2,19 @@
   "name": "@sdks/uikit-react",
   "version": "0.0.0",
   "private": true,
-  "exports": {
-    "./button": "./src/button.tsx",
-    "./card": "./src/card.tsx",
-    "./code": "./src/code.tsx"
-  },
   "scripts": {
-    "lint": "eslint --ext .js,.ts,.tsx --fix",
-    "generate:component": "turbo gen react-component"
+    "lint": "eslint --ext .js,.ts,.tsx --fix"
   },
+  "exports": {
+    ".": {
+      "react-server": "./src/server.ts",
+      "default": "./src/index.ts"
+    }
+  },
+  "sideEffects": false,
   "devDependencies": {
     "@sdks/eslint-config": "*",
     "@sdks/typescript-config": "*",
-    "@turbo/gen": "^1.10.12",
     "@types/eslint": "^8.44.7",
     "@types/node": "^20.5.2",
     "@types/react": "^18.2.0",

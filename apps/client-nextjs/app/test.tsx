@@ -1,7 +1,7 @@
 'use client';
 import { Client } from '@sdks/api-client';
-import { DefaultRunner } from '@sdks/api-client/src/client-runner';
-import { useCommand, useQuery } from '@sdks/api-react-query';
+import { DefaultRunner } from '@sdks/api-client';
+import { useCommand } from '@sdks/api-react-query';
 import Link from 'next/link';
 
 const clientRunner = new DefaultRunner({

@@ -3,6 +3,15 @@ import { Express, Router } from 'express';
 
 export function configRoutes(app: Express) {
   //===================================================================================================
+  // /api/admin
+  const adminRouter = Router();
+  adminRouter.post('/', proxyTo('Admin:AdminCreateCmd'));
+  adminRouter.post('/login', proxyTo(':AdminLoginQry'));
+  adminRouter.get('/my-info', proxyTo('Admin:AdminMyInfoQry'));
+
+  app.use('/api/admin', adminRouter);
+
+  //===================================================================================================
   // /api/user
   const userRouter = Router();
   userRouter.post('/', proxyTo('User:UserRegisterCmd'));

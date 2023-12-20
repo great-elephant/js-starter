@@ -2,7 +2,7 @@ import { SuccessData, UnprocessableError } from '$share/msg';
 import { Transactional } from '@cellularjs/typeorm';
 import { Service, ServiceHandler } from '@cellularjs/net';
 import { UserRegisterData } from '@sdks/types-shared';
-import { crypto } from 'user/$inner/password';
+import { crypto } from '$share/password';
 import { UserProfileRepository } from 'user/$inner/dal/user-profile.dal';
 import { UserRegistrationRepository } from 'user/$inner/dal/user-registration.dal';
 import { UserRegisterReq } from './register.req';

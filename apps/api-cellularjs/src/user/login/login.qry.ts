@@ -1,9 +1,9 @@
 import { Transactional } from '@cellularjs/typeorm';
 import { Service, ServiceHandler } from '@cellularjs/net';
-import { AuthData } from '@sdks/types-shared';
+import { UserAuthData } from '@sdks/types-shared';
 import { SuccessData, UnAuthorized } from '$share/msg';
-import { genAuthData } from '$share/auth/jwt';
-import { crypto } from 'user/$inner/password';
+import { genUserCredentials } from '$share/auth';
+import { crypto } from '$share/password';
 import { UserProfileRepository } from 'user/$inner/dal/user-profile.dal';
 import { UserLoginReq } from './login.req';
 
@@ -28,6 +28,6 @@ export class UserLoginQry implements ServiceHandler {
       throw UnAuthorized({ msg: ('oidc.err.login_credential_incorrect') });
     }
 
-    return SuccessData<AuthData>(genAuthData({ pid: user.pid }));
+    return SuccessData<UserAuthData>(genUserCredentials({ pid: user.pid }));
   }
 }

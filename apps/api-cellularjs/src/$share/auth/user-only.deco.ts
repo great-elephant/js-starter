@@ -1,8 +1,7 @@
 import { UnAuthorized } from '$share/msg';
-import { Injectable } from '@cellularjs/di';
+import { Injectable, addProxy, ProxyHandler } from '@cellularjs/di';
 import { addServiceProxies, ServiceHandler, IRQ, NextHandler } from '@cellularjs/net';
-import { parseToken } from './jwt';
-import { UserData } from './sign-in.data';
+import { parseUserToken } from './jwt';
 import { TokenExpiredError } from 'jsonwebtoken';
 
 export const UserOnly = () => aClass => {
@@ -24,7 +23,7 @@ export class UserOnlyProxy implements ServiceHandler {
     let userData: UserData;
 
     try {
-      userData = parseToken(irq);
+      userData = parseUserToken(irq);
     } catch (err) {
       if (err instanceof TokenExpiredError) {
         throw UnAuthorized({ msg: 'Token is expired' });
@@ -40,4 +39,28 @@ export class UserOnlyProxy implements ServiceHandler {
 
     return nextHandler.handle();
   }
+}
+
+const InjectSignInData = () => aClass => {
+  addProxy(aClass, { proxy: SignInDataProxy });
+  return aClass;
+};
+
+@Injectable()
+class SignInDataProxy implements ProxyHandler {
+  constructor(
+    private irq: IRQ,
+  ) { }
+
+  async handle() {
+    const { irq } = this;
+
+    try { return parseUserToken(irq); }
+    catch { }
+  }
+}
+
+@InjectSignInData()
+export class UserData {
+  pid: string;
 }

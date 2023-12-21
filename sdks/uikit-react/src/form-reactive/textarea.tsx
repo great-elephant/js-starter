@@ -1,35 +1,32 @@
 import clsx from 'clsx';
 import { ChangeEvent, useCallback } from 'react';
 import { useController } from 'react-hook-form';
-import { Input as PrimitiveInput, InputProps as InputPropsPrimitive } from '../form';
+import { Textarea as PrimitiveTextarea, TextareaProps as PrimitiveTextareaProps } from '../form';
 
-interface InputProps extends InputPropsPrimitive {
+interface TextareaProps extends PrimitiveTextareaProps {
   name: string;
 }
 
-export const Input = ({
+export const Textarea = ({
   className,
   name,
-  onChange,
-  type = 'text',
   ...rest
-}: InputProps) => {
+}: TextareaProps) => {
   const controler = useController({ name });
   const field = controler.field;
   const fieldState = controler.fieldState;
 
   const handleChange = useCallback(
-    (e: ChangeEvent<HTMLInputElement>) => {
+    (e: ChangeEvent<HTMLTextAreaElement>) => {
       field.onChange(e);
-      onChange?.(e);
     },
-    [field, onChange],
+    [field],
   );
 
   const isInvalid = !!fieldState.error?.message;
 
   return (
-    <PrimitiveInput
+    <PrimitiveTextarea
       {...field}
       {...rest}
       className={clsx(
@@ -39,7 +36,6 @@ export const Input = ({
         className,
       )}
       value={field.value === null || field.value === undefined ? '' : field.value}
-      type={type}
       onChange={handleChange}
     />
   );

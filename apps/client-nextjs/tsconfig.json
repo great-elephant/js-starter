@@ -10,9 +10,8 @@
     ],
     "baseUrl": ".",
     "paths": {
-      "@/*": [
-        "./*"
-      ]
+      "@/*": ["./*"],
+      "@uikit-react/*": ["../../sdks/uikit-react/src/*"]
     },
     "incremental": true
   },

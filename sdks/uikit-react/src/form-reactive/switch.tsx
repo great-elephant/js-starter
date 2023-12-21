@@ -1,17 +1,15 @@
 import clsx from 'clsx';
-import { ChangeEvent, useCallback } from 'react';
+import { useCallback } from 'react';
 import { useController } from 'react-hook-form';
-import { Input as PrimitiveInput, InputProps as InputPropsPrimitive } from '../form';
+import { Switch as PrimitiveSwitch, SwitchProps as PrimitiveSwitchProps } from '../form';
 
-interface InputProps extends InputPropsPrimitive {
+interface InputProps extends PrimitiveSwitchProps {
   name: string;
 }
 
-export const Input = ({
+export const Switch = ({
   className,
   name,
-  onChange,
-  type = 'text',
   ...rest
 }: InputProps) => {
   const controler = useController({ name });
@@ -19,17 +17,16 @@ export const Input = ({
   const fieldState = controler.fieldState;
 
   const handleChange = useCallback(
-    (e: ChangeEvent<HTMLInputElement>) => {
-      field.onChange(e);
-      onChange?.(e);
+    (checked: boolean) => {
+      field.onChange(checked);
     },
-    [field, onChange],
+    [field],
   );
 
   const isInvalid = !!fieldState.error?.message;
 
   return (
-    <PrimitiveInput
+    <PrimitiveSwitch
       {...field}
       {...rest}
       className={clsx(
@@ -38,9 +35,8 @@ export const Input = ({
         },
         className,
       )}
-      value={field.value === null || field.value === undefined ? '' : field.value}
-      type={type}
-      onChange={handleChange}
+      checked={field.value}
+      onCheckedChange={handleChange}
     />
   );
 };

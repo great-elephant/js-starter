@@ -1,35 +1,33 @@
 import clsx from 'clsx';
 import { ChangeEvent, useCallback } from 'react';
 import { useController } from 'react-hook-form';
-import { Input as PrimitiveInput, InputProps as InputPropsPrimitive } from '../form';
+import { Slider as PrimitiveSlider, SliderProps as SliderPropsPrimitive } from '../form';
 
-interface InputProps extends InputPropsPrimitive {
+interface SliderProps extends SliderPropsPrimitive {
   name: string;
 }
 
-export const Input = ({
+export const Slider = ({
   className,
   name,
   onChange,
-  type = 'text',
   ...rest
-}: InputProps) => {
+}: SliderProps) => {
   const controler = useController({ name });
   const field = controler.field;
   const fieldState = controler.fieldState;
 
   const handleChange = useCallback(
-    (e: ChangeEvent<HTMLInputElement>) => {
-      field.onChange(e);
-      onChange?.(e);
+    (value: number[]) => {
+      field.onChange(value);
     },
-    [field, onChange],
+    [field],
   );
 
   const isInvalid = !!fieldState.error?.message;
 
   return (
-    <PrimitiveInput
+    <PrimitiveSlider
       {...field}
       {...rest}
       className={clsx(
@@ -38,9 +36,9 @@ export const Input = ({
         },
         className,
       )}
-      value={field.value === null || field.value === undefined ? '' : field.value}
-      type={type}
-      onChange={handleChange}
+      defaultValue={field.value}
+      value={field.value}
+      onValueChange={handleChange}
     />
   );
 };

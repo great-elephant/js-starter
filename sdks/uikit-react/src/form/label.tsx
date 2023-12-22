@@ -1,6 +1,18 @@
 import { cn } from '@uikit-react/lib/utils';
-import { LabelHTMLAttributes } from 'react';
+import { LabelHTMLAttributes, ReactNode } from 'react';
 
-export function Label({ children, className, ...rest }: LabelHTMLAttributes<HTMLLabelElement>) {
-  return <label {...rest} className={(cn('font-semibold', className))}>{children}</label>;
+type LabelProps = LabelHTMLAttributes<HTMLLabelElement> & {
+  label?: undefined;
+  children: ReactNode;
+} | LabelHTMLAttributes<HTMLLabelElement> & {
+  children?: undefined;
+  label: string;
+}
+
+export function Label({ className, ...rest }: LabelProps) {
+  return <label
+    {...rest}
+    className={(cn('font-semibold', className))}
+    children={rest.children || rest.label}
+  />;
 }

@@ -5,4 +5,4 @@ export { Checkbox } from './checkbox';
 export { Switch } from './switch';
 export { Textarea } from './textarea';
 export { FieldError } from './field-error';
-export * as Yup from 'yup';
+export * as y from 'yup';

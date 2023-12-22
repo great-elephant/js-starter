@@ -1,3 +1,4 @@
+import { ClienContainer } from '@/helper/client-container';
 import './globals.scss';
 import type { Metadata } from 'next';
 
@@ -13,7 +14,11 @@ export default function RootLayout({
 }): JSX.Element {
   return (
     <html lang='en'>
-      <body>{children}</body>
+      <body>
+        <ClienContainer>
+          {children}
+        </ClienContainer>
+      </body>
     </html>
   );
 }

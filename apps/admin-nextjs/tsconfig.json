@@ -8,7 +8,12 @@
         "name": "next"
       }
     ],
-    "incremental": true
+    "incremental": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./*"],
+      "@uikit-react/*": ["../../sdks/uikit-react/src/*"]
+    },
   },
   "include": [
     "next-env.d.ts",

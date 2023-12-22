@@ -6,7 +6,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 export type FormReactiveProps<Values extends FieldValues> = PropsWithChildren<{
   defaultValues?: DefaultValues<Values>;
   onSubmit: (values: Values) => void;
-  validationSchema?: ObjectSchema<any>;
+  schema?: ObjectSchema<any>;
   className?: string;
   innerRef?: MutableRefObject<UseFormReturn<Values> | undefined>;
   mode?: Mode;
@@ -16,7 +16,7 @@ export function FormReactive<V extends { [x: string]: unknown }>({
   onSubmit,
   defaultValues,
   children,
-  validationSchema,
+  schema,
   className,
   innerRef,
   mode = 'onSubmit',
@@ -24,7 +24,7 @@ export function FormReactive<V extends { [x: string]: unknown }>({
   const useFormReturn = useForm({
     mode,
     defaultValues,
-    resolver: validationSchema && yupResolver(validationSchema),
+    resolver: schema && yupResolver(schema),
   });
 
   const { handleSubmit } = useFormReturn;

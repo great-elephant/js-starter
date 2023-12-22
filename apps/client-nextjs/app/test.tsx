@@ -1,13 +1,13 @@
 'use client';
 import { Terminal } from 'lucide-react';
 import { Alert, AlertDescription, AlertTitle, Box, Button, Center, Label } from '@sdks/uikit-react';
-import { FormReactive, Input, Checkbox, Switch, Textarea, Yup, FieldError, Slider } from '@sdks/uikit-react/form-reactive';
+import { FormReactive, Input, Checkbox, Switch, Textarea, y, FieldError, Slider } from '@sdks/uikit-react/form-reactive';
 
-const schema = Yup.object({
-  accept: Yup.boolean().isTrue(),
-  bio: Yup.string().max(200),
-  email: Yup.string().required(),
-  gender: Yup.array().min(1).of(Yup.string().min(1)),
+const schema = y.object({
+  accept: y.boolean().isTrue(),
+  bio: y.string().max(200),
+  email: y.string().required(),
+  gender: y.array().min(1).of(y.string().min(1)),
 });
 
 export function Test() {
@@ -20,7 +20,7 @@ export function Test() {
         gender: ['female'],
         price: [1, 100],
       }}
-      validationSchema={schema}
+      schema={schema}
       onSubmit={(values: any) => {
         console.log('values', values);
       }}

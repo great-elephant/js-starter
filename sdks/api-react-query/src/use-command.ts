@@ -1,8 +1,8 @@
 import { useMutation } from '@tanstack/react-query';
-import { ErrorResponse, SuccessResponse } from '@sdks/types-shared';
+import { ErrorResponse, MetaData, SuccessResponse } from '@sdks/types-shared';
 import { ClientRunner, SendOptions, overrideCaller } from '@sdks/api-client';
 import { APICaller } from '@sdks/api-core';
-import { UseRequestReturn } from './type';
+import { APIReturnedData, ReturnedData, UseRequestReturn } from './type';
 import { useAbort } from './use-abort';
 
 type UseCommandReturn<C extends APICaller<ClientRunner>> = Omit<UseRequestReturn<C>, 'refresh' | 'setData' | 'setMeta'>
@@ -18,7 +18,7 @@ export function useCommand<Caller extends APICaller<ClientRunner>>(
     isSuccess,
     isPending,
     mutateAsync,
-  } = useMutation<SuccessResponse<unknown>, ErrorResponse>({
+  } = useMutation<SuccessResponse<APIReturnedData<Caller>>, ErrorResponse>({
     mutationFn: overrideCaller(caller, runner => ({
       API_BASE_URL: runner.API_BASE_URL,
       send: async (input, options) => {
@@ -35,7 +35,13 @@ export function useCommand<Caller extends APICaller<ClientRunner>>(
   return {
     data: tsData?.data,
     meta: tsData?.meta,
-    invoke: (...args) => mutateAsync(...args),
+    invoke: async (...args) => {
+      try {
+        return await mutateAsync(...args);
+      } catch (error) {
+        return { error: error as ErrorResponse };
+      }
+    },
     error,
     isSuccess,
     loading: isPending,

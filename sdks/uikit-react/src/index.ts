@@ -5,5 +5,6 @@ export * from './feedback';
 export * from './typography';
 export * from './misc';
 export * from './overlay';
+export * from './panel';
 export * from './theme';
 export * from './lib/utils';

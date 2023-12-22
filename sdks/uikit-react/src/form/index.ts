@@ -6,6 +6,9 @@ export { Label } from './label';
 export { Radio } from './radio';
 export type { RadioProps } from './radio';
 
+export { Select, SelectGroup, SelectOption, SelectLabel, SelectSeparator } from './select';
+export type { SelectProps } from './select';
+
 export { Slider } from './slider';
 export type { SliderProps } from './slider';
 

@@ -1,5 +1,5 @@
 import { MutableRefObject, PropsWithChildren } from 'react';
-import { useForm, FormProvider, DefaultValues, SubmitHandler, Mode, UseFormReturn, FieldValues } from 'react-hook-form';
+import { useForm, FormProvider, DefaultValues, Mode, UseFormReturn, FieldValues } from 'react-hook-form';
 import { ObjectSchema } from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
 
@@ -33,7 +33,14 @@ export function FormReactive<V extends { [x: string]: unknown }>({
 
   return (
     <FormProvider {...useFormReturn}>
-      <form className={className} onSubmit={handleSubmit(onSubmit as SubmitHandler<V>)}>
+      <form
+        className={className}
+        onSubmit={(e) => {
+          // Ref: https://stackoverflow.com/a/74963826
+          e.stopPropagation();
+          handleSubmit(onSubmit)(e);
+        }}
+      >
         {children}
       </form>
     </FormProvider>

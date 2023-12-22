@@ -26,3 +26,5 @@ export type UserTokenClaims = {
 }
 
 export type RefreshTokenClaims = Omit<UserTokenClaims, 'exp'>;
+
+export const USER_TKN = 'u_tkn';

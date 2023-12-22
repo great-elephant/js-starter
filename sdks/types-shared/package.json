@@ -7,6 +7,9 @@
   "scripts": {
     "lint": "eslint src/**/*.ts --fix"
   },
+  "exports": {
+    ".": "./src/index.ts"
+  },
   "devDependencies": {
     "eslint": "^8.53.0"
   }

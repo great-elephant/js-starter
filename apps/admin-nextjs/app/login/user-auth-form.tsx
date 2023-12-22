@@ -5,8 +5,8 @@ import { Button, Label, Box, FieldGroup, Alert, AlertDescription } from '@sdks/u
 import { y, Input, FieldError } from '@sdks/uikit-react/form-reactive';
 import { FormReactive } from '@uikit-react/form-reactive';
 import { useCommand } from '@sdks/api-react-query';
-import Cookies from 'js-cookie';
-import { useRouter } from 'next/navigation';
+import { useRouter, useSearchParams } from 'next/navigation';
+import { saveAuthSession } from '@/helper/auth';
 
 type UserFormValues = {
   email: string;
@@ -20,6 +20,7 @@ const schema: y.ObjectSchema<UserFormValues> = y.object({
 
 export function UserAuthForm() {
   const router = useRouter();
+  const params = useSearchParams();
   const login = useCommand(client.admin.login);
 
   async function onSubmit(values: UserFormValues) {
@@ -29,9 +30,8 @@ export function UserAuthForm() {
       return;
     }
 
-    localStorage.setItem('access_token', data.accessToken);
-    Cookies.set('access_token', data.accessToken);
-    router.push('/');
+    saveAuthSession(data);
+    router.push(params.get('prev') || '/');
   }
 
   return (

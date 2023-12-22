@@ -30,3 +30,5 @@ export type AdminTokenClaims = {
   role: AdminRole;
   exp: number;
 }
+
+export const ADMIN_TKN = 'adm_tkn';

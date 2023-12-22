@@ -1,5 +1,6 @@
 export { FormReactive } from './form-reactive';
 export { Input } from './input';
+export { Radio } from './radio';
 export { Slider } from './slider';
 export { Checkbox } from './checkbox';
 export { Switch } from './switch';

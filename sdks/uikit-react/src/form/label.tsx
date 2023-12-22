@@ -12,7 +12,7 @@ type LabelProps = LabelHTMLAttributes<HTMLLabelElement> & {
 export function Label({ className, ...rest }: LabelProps) {
   return <label
     {...rest}
-    className={(cn('font-semibold', className))}
+    className={(cn(className))}
     children={rest.children || rest.label}
   />;
 }

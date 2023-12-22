@@ -3,6 +3,9 @@ export type { InputProps } from './input';
 
 export { Label } from './label';
 
+export { Radio } from './radio';
+export type { RadioProps } from './radio';
+
 export { Slider } from './slider';
 export type { SliderProps } from './slider';
 

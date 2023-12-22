@@ -1,6 +1,5 @@
 import { Metadata } from 'next';
-import Link from 'next/link';
-import { cn, buttonVariants } from '@sdks/uikit-react';
+import { Text, Heading } from '@sdks/uikit-react';
 import { UserAuthForm } from './user-auth-form';
 
 export const metadata: Metadata = {
@@ -26,16 +25,16 @@ export default function AuthenticationPage() {
           >
             <path d='M15 6v12a3 3 0 1 0 3-3H6a3 3 0 1 0 3 3V6a3 3 0 1 0-3 3h12a3 3 0 1 0-3-3' />
           </svg>
-          Yolo Inc
+          <Text size='lg'>Yolo Inc</Text>
         </div>
         <div className='relative z-20 mt-auto'>
           <blockquote className='space-y-2'>
-            <p className='text-lg'>
+            <Text size='lg'>
               &ldquo;This library has saved me countless hours of work and
               helped me deliver stunning designs to my clients faster than
               ever before.&rdquo;
-            </p>
-            <footer className='text-sm'>Sofia Davis</footer>
+            </Text>
+            <Text size='sm'>Sofia Davis</Text>
           </blockquote>
         </div>
       </div>
@@ -43,9 +42,9 @@ export default function AuthenticationPage() {
       <div className='w-full p-4'>
         <div className='mx-auto flex w-full flex-col justify-center space-y-6 sm:w-[350px]'>
           <div className='flex flex-col space-y-2 text-center'>
-            <h1 className='text-2xl font-semibold tracking-tight'>
+            <Heading className='font-semibold tracking-tight'>
               Sign-in to Admin
-            </h1>
+            </Heading>
           </div>
 
           <UserAuthForm />

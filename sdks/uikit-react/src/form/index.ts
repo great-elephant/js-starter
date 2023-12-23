@@ -17,6 +17,12 @@ export { FieldGroup } from './field-group';
 export { FieldError } from './field-error';
 export type { FieldErrorProps } from './field-error';
 
+export { Calendar } from './calendar';
+export type { CalendarProps } from './calendar';
+
+export { DatePicker } from './datepicker';
+export type { DatePickerProps } from './datepicker';
+
 export { Checkbox } from './checkbox';
 export type { CheckboxProps } from './checkbox';
 

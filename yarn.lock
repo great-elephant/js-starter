@@ -1852,10 +1852,12 @@ __metadata:
     "@types/react-dom": "npm:^18.2.0"
     class-variance-authority: "npm:^0.7.0"
     clsx: "npm:^2.0.0"
+    date-fns: "npm:^3.0.6"
     eslint: "npm:^8.53.0"
     lucide-react: "npm:^0.299.0"
     next-themes: "npm:^0.2.1"
     react: "npm:^18.2.0"
+    react-day-picker: "npm:^8.9.1"
     react-hook-form: "npm:^7.49.2"
     sonner: "npm:^1.2.4"
     tailwind-merge: "npm:^2.1.0"
@@ -3878,6 +3880,13 @@ __metadata:
   dependencies:
     "@babel/runtime": "npm:^7.21.0"
   checksum: e4b521fbf22bc8c3db332bbfb7b094fd3e7627de0259a9d17c7551e2d2702608a7307a449206065916538e384f37b181565447ce2637ae09828427aed9cb5581
+  languageName: node
+  linkType: hard
+
+"date-fns@npm:^3.0.6":
+  version: 3.0.6
+  resolution: "date-fns@npm:3.0.6"
+  checksum: ca6ac81aca623fd6d12a43da59cc216e13a75a2eecf7fac692654524fca625e073f5cd36951ef0deac9621ead564eb06b4c3723f77b34e86f21ca3c0c3b32ff7
   languageName: node
   linkType: hard
 
@@ -8266,6 +8275,16 @@ __metadata:
     iconv-lite: "npm:0.4.24"
     unpipe: "npm:1.0.0"
   checksum: 5dad5a3a64a023b894ad7ab4e5c7c1ce34d3497fc7138d02f8c88a3781e68d8a55aa7d4fd3a458616fa8647cc228be314a1c03fb430a07521de78b32c4dd09d2
+  languageName: node
+  linkType: hard
+
+"react-day-picker@npm:^8.9.1":
+  version: 8.9.1
+  resolution: "react-day-picker@npm:8.9.1"
+  peerDependencies:
+    date-fns: ^2.28.0
+    react: ^16.8.0 || ^17.0.0 || ^18.0.0
+  checksum: 5766adaaeed0b73c94f2002c8b8ece7262c89c165d69e7a89131ff14f6bae108d6787d1b21f3df48fa5b405e4886cf207daf81488d5cd10b8b6942f39cc477e2
   languageName: node
   linkType: hard
 

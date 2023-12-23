@@ -1,5 +1,5 @@
 export * from './layout';
-export * from './feedback';
+export * from './feedback/alert';
+export * from './feedback/skeleton';
 export * from './typography';
 export * from './lib/utils';
-export { buttonVariants } from './button';

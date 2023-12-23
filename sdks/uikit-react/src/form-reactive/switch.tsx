@@ -1,7 +1,7 @@
 import clsx from 'clsx';
 import { useCallback } from 'react';
 import { useController } from 'react-hook-form';
-import { Switch as PrimitiveSwitch, SwitchProps as PrimitiveSwitchProps } from '../form';
+import { Switch as PrimitiveSwitch, SwitchProps as PrimitiveSwitchProps } from '@uikit-react/form';
 
 interface InputProps extends PrimitiveSwitchProps {
   name: string;

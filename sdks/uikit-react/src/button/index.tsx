@@ -51,7 +51,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     useEffect(() => {
       if (loading) return setLoading(true);
 
-      setTimeout(() => setLoading(loading), 200);
+      setTimeout(() => setLoading(loading), 100);
     }, [loading]);
 
     return (

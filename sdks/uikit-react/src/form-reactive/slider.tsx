@@ -1,7 +1,7 @@
 import clsx from 'clsx';
 import { ChangeEvent, useCallback } from 'react';
 import { useController } from 'react-hook-form';
-import { Slider as PrimitiveSlider, SliderProps as SliderPropsPrimitive } from '../form';
+import { Slider as PrimitiveSlider, SliderProps as SliderPropsPrimitive } from '@uikit-react/form';
 
 interface SliderProps extends SliderPropsPrimitive {
   name: string;

@@ -1,7 +1,7 @@
 import clsx from 'clsx';
 import { ChangeEvent, useCallback } from 'react';
 import { useController } from 'react-hook-form';
-import { Textarea as PrimitiveTextarea, TextareaProps as PrimitiveTextareaProps } from '../form';
+import { Textarea as PrimitiveTextarea, TextareaProps as PrimitiveTextareaProps } from '@uikit-react/form';
 
 interface TextareaProps extends PrimitiveTextareaProps {
   name: string;

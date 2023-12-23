@@ -1,15 +1,19 @@
 'use client';
+import '@/helper/global/global.client';
 import { PropsWithChildren } from 'react';
 import { ReactQueryContainer } from '@sdks/api-react-query';
-import '@/helper/global/global.client';
-import { ThemeProvider } from '@uikit-react/theme';
+import { Toaster, ThemeProvider } from '@sdks/uikit-react';
+import { LazyMotion, domAnimation } from 'framer-motion';
 
 export function ClienContainer({ children }: PropsWithChildren) {
   return (
     <ReactQueryContainer>
-      <ThemeProvider>
-        {children}
-      </ThemeProvider>
+      <LazyMotion features={domAnimation}>
+        <ThemeProvider>
+          {children}
+        </ThemeProvider>
+        <Toaster />
+      </LazyMotion>
     </ReactQueryContainer>
   );
 }

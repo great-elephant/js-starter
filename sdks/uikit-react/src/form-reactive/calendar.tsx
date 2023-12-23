@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { Calendar as CalendarPrimitive, CalendarProps as CalendarPropsPrimitive } from '../form';
+import { Calendar as CalendarPrimitive, CalendarProps as CalendarPropsPrimitive } from '@uikit-react/form';
 import { useController } from 'react-hook-form';
 
 type CalendarProps = CalendarPropsPrimitive & {

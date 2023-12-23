@@ -1,6 +1,6 @@
 import clsx from 'clsx';
 import { useController } from 'react-hook-form';
-import { Checkbox as PrimitiveCheckbox, CheckboxProps as CheckboxPropsPrimitive } from '../form';
+import { Checkbox as PrimitiveCheckbox, CheckboxProps as CheckboxPropsPrimitive } from '@uikit-react/form';
 
 interface CheckboxProps extends CheckboxPropsPrimitive {
   name: string;

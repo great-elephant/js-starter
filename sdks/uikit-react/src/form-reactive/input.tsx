@@ -1,7 +1,7 @@
 import clsx from 'clsx';
 import { ChangeEvent, useCallback } from 'react';
 import { useController } from 'react-hook-form';
-import { Input as PrimitiveInput, InputProps as InputPropsPrimitive } from '../form';
+import { Input as PrimitiveInput, InputProps as InputPropsPrimitive } from '@uikit-react/form';
 
 interface InputProps extends Omit<InputPropsPrimitive, 'defaultValue'> {
   name: string;

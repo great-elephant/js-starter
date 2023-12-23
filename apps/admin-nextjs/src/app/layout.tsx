@@ -1,6 +1,6 @@
-import { ClienContainer } from '@/helper/client-container';
-import './globals.scss';
 import type { Metadata } from 'next';
+import { ClienContainer } from '@/misc/client-container';
+import '@/assets/scss/global.scss';
 
 export const metadata: Metadata = {
   title: 'Create Turborepo',

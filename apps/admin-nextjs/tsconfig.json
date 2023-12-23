@@ -9,10 +9,10 @@
       }
     ],
     "incremental": true,
-    "baseUrl": ".",
+    "baseUrl": "./src",
     "paths": {
       "@/*": ["./*"],
-      "@uikit-react/*": ["../../sdks/uikit-react/src/*"]
+      "@uikit-react/*": ["../../../sdks/uikit-react/src/*"]
     },
   },
   "include": [

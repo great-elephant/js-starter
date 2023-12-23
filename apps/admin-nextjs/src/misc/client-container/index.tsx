@@ -1,5 +1,5 @@
 'use client';
-import '@/helper/global/global.client';
+import '@/misc/global/global.client';
 import { PropsWithChildren } from 'react';
 import { ReactQueryContainer } from '@sdks/api-react-query';
 import { Toaster, ThemeProvider } from '@sdks/uikit-react';

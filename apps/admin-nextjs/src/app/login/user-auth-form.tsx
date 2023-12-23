@@ -2,11 +2,10 @@
 
 import * as React from 'react';
 import { Button, Label, Box, FieldGroup, toast } from '@sdks/uikit-react';
-import { y, Input, FieldError } from '@sdks/uikit-react/form-reactive';
-import { FormReactive } from '@uikit-react/form-reactive';
+import { y, Input, FieldError, FormReactive } from '@sdks/uikit-react/form-reactive';
 import { useCommand } from '@sdks/api-react-query';
 import { useRouter, useSearchParams } from 'next/navigation';
-import { saveAuthSession } from '@/helper/auth';
+import { saveAuthSession } from '@/misc/auth/heper.csr';
 
 type UserFormValues = {
   email: string;

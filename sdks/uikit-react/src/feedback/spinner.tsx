@@ -1,7 +1,9 @@
 import { cva, type VariantProps } from 'class-variance-authority';
 import { cn } from '..';
 
-interface SpinnerProps extends VariantProps<typeof spinnerVariants> { }
+interface SpinnerProps extends VariantProps<typeof spinnerVariants> {
+  className?: string;
+}
 
 const spinnerVariants = cva(
   null,
@@ -19,12 +21,12 @@ const spinnerVariants = cva(
   }
 );
 
-export function Spinner({ size }: SpinnerProps) {
+export function Spinner({ size, className }: SpinnerProps) {
   return (
     <div role='status'>
       <svg
         aria-hidden='true'
-        className={cn(spinnerVariants({ size }), 'inline text-gray-200 animate-spin dark:text-gray-600 fill-gray-600')}
+        className={cn(spinnerVariants({ size }), 'inline text-gray-200 animate-spin dark:text-gray-600 fill-gray-600', className)}
         viewBox='0 0 100 101'
         fill='none'
         xmlns='http://www.w3.org/2000/svg'

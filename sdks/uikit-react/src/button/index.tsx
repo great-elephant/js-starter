@@ -1,10 +1,13 @@
-import * as React from 'react';
-import { Slot } from '@radix-ui/react-slot';
+'use client';
+
+import { useState, useEffect, forwardRef } from 'react';
 import { cva, type VariantProps } from 'class-variance-authority';
+import { Slot } from '@radix-ui/react-slot';
 import { cn } from '@uikit-react/lib/utils';
+import { Spinner } from '@uikit-react/feedback';
 
 const buttonVariants = cva(
-  'inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50',
+  'select-none inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none',
   {
     variants: {
       variant: {
@@ -37,18 +40,32 @@ export interface ButtonProps
   VariantProps<typeof buttonVariants> {
   asChild?: boolean;
   label?: string;
+  loading?: boolean;
 }
 
-const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ className, variant, size, asChild = false, ...props }, ref) => {
+const Button = forwardRef<HTMLButtonElement, ButtonProps>(
+  ({ className, disabled, loading, variant, size, children, label, asChild = false, ...props }, ref) => {
     const Comp = asChild ? Slot : 'button';
+    const [isLoading, setLoading] = useState(loading);
+
+    useEffect(() => {
+      if (loading) return setLoading(true);
+
+      setTimeout(() => setLoading(loading), 200);
+    }, [loading]);
+
     return (
       <Comp
-        className={cn(buttonVariants({ variant, size, className }))}
-        ref={ref}
-        children={props.children || props.label}
         {...props}
-      />
+        ref={ref}
+        disabled={disabled || isLoading}
+        className={cn(buttonVariants({ variant, size, className }), {
+          'relative': isLoading,
+        })}
+      >
+        {isLoading && <Spinner />}
+        {!isLoading && (children || label)}
+      </Comp>
     );
   }
 );

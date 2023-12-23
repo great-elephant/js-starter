@@ -1,6 +1,7 @@
 import { ClienContainer } from '@/helper/client-container';
 import './globals.scss';
 import type { Metadata } from 'next';
+import { Toaster } from '@sdks/uikit-react';
 
 export const metadata: Metadata = {
   title: 'Create Turborepo',
@@ -18,6 +19,7 @@ export default function RootLayout({
         <ClienContainer>
           {children}
         </ClienContainer>
+        <Toaster />
       </body>
     </html>
   );

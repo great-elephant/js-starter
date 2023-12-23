@@ -1857,6 +1857,7 @@ __metadata:
     next-themes: "npm:^0.2.1"
     react: "npm:^18.2.0"
     react-hook-form: "npm:^7.49.2"
+    sonner: "npm:^1.2.4"
     tailwind-merge: "npm:^2.1.0"
     tailwindcss-animate: "npm:^1.0.7"
     typescript: "npm:^5.2.2"
@@ -9005,6 +9006,16 @@ __metadata:
     ip: "npm:^2.0.0"
     smart-buffer: "npm:^4.2.0"
   checksum: 43f69dbc9f34fc8220bc51c6eea1c39715ab3cfdb115d6e3285f6c7d1a603c5c75655668a5bbc11e3c7e2c99d60321fb8d7ab6f38cda6a215fadd0d6d0b52130
+  languageName: node
+  linkType: hard
+
+"sonner@npm:^1.2.4":
+  version: 1.2.4
+  resolution: "sonner@npm:1.2.4"
+  peerDependencies:
+    react: ^18.0.0
+    react-dom: ^18.0.0
+  checksum: 760732ab0c687ce696c44f7c0face1fc06308c1cfb08e333476e22a4cbf1ace11872f0d04146f2e6dc7a411760254588b30e856048ed0f1efa916070f0339a12
   languageName: node
   linkType: hard
 

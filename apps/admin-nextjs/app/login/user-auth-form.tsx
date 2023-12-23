@@ -1,7 +1,7 @@
 'use client';
 
 import * as React from 'react';
-import { Button, Label, Box, FieldGroup, Alert, AlertDescription } from '@sdks/uikit-react';
+import { Button, Label, Box, FieldGroup, toast } from '@sdks/uikit-react';
 import { y, Input, FieldError } from '@sdks/uikit-react/form-reactive';
 import { FormReactive } from '@uikit-react/form-reactive';
 import { useCommand } from '@sdks/api-react-query';
@@ -27,6 +27,10 @@ export function UserAuthForm() {
     const { data, error } = await login.invoke(values);
 
     if (error) {
+      toast.error({
+        message: 'Login failed', 
+        description: error.msg,
+      });
       return;
     }
 
@@ -50,7 +54,6 @@ export function UserAuthForm() {
             autoCapitalize='none'
             autoComplete='email'
             autoCorrect='off'
-            disabled={login.loading}
           />
           <FieldError name='email' />
         </FieldGroup>
@@ -65,16 +68,11 @@ export function UserAuthForm() {
             autoCapitalize='none'
             autoComplete='password'
             autoCorrect='off'
-            disabled={login.loading}
           />
           <FieldError name='password' />
         </FieldGroup>
 
-        {login.error?.msg && <Alert variant={'destructive'}>
-          <AlertDescription>{login.error.msg}</AlertDescription>
-        </Alert>}
-
-        <Button disabled={login.loading} label='Sign In' />
+        <Button loading={login.loading} label='Sign In' />
       </Box>
     </FormReactive>
   );

@@ -5,7 +5,8 @@ import { Button, Label, Box, FieldGroup, toast } from '@sdks/uikit-react';
 import { y, Input, FieldError, FormReactive } from '@sdks/uikit-react/form-reactive';
 import { useCommand } from '@sdks/api-react-query';
 import { useRouter, useSearchParams } from 'next/navigation';
-import { saveAuthSession } from '@/misc/auth/heper.csr';
+import { saveAuthSession } from '@/misc/session/heper.client';
+import { useSession } from '@/misc/session';
 
 type UserFormValues = {
   email: string;
@@ -22,6 +23,8 @@ export function UserAuthForm() {
   const params = useSearchParams();
   const login = useCommand(client.admin.login);
 
+  const { fetchUser } = useSession();
+
   async function onSubmit(values: UserFormValues) {
     const { data, error } = await login.invoke(values);
 
@@ -34,6 +37,7 @@ export function UserAuthForm() {
     }
 
     saveAuthSession(data);
+    fetchUser();
     router.push(params.get('prev') || '/');
   }
 

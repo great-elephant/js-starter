@@ -2,7 +2,7 @@
 module.exports = {
   darkMode: ['class'],
   content: [
-    './src/app/**/*.{ts,tsx}',
+    './src/**/*.{ts,tsx}',
     '../../sdks/uikit-react/src/**/*.{ts,tsx}',
   ],
   theme: {

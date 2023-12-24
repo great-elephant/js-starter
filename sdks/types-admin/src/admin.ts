@@ -11,7 +11,7 @@ export type UserRegisterData = {
 }
 
 export type MyInfoData = {
-  pid: string;
+  id: number;
   firstName: string;
   lastName: string;
   email: string;

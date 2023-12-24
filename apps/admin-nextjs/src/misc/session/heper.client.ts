@@ -10,3 +10,11 @@ export function clearAuthSession() {
   localStorage.removeItem(ADMIN_TKN);
   Cookies.remove(ADMIN_TKN);
 }
+
+export function isLoggedIn() {
+  return !!localStorage.getItem(ADMIN_TKN);
+}
+
+export function getToken() {
+  return localStorage.getItem(ADMIN_TKN);
+}

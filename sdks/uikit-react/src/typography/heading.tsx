@@ -6,7 +6,7 @@ import { cn } from '@uikit-react/lib/utils';
  * Type scale: https://tailwindcss.com/docs/font-size
  */
 const textVariants = cva(
-  'inline-block',
+  null,
   {
     variants: {
       level: {

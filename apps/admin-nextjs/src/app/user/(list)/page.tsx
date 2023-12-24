@@ -1,15 +1,14 @@
 import { LayoutMain } from '@/widgets/layout-main';
-import { Heading } from '@sdks/uikit-react';
 import Link from 'next/link';
 
-function Dashboard(): JSX.Element {
+function UserList(): JSX.Element {
   return (
-    <LayoutMain className='container'>
-      <Heading className='py-4'>Dashboard</Heading>
+    <LayoutMain>
+      list
       <Link href={'/user'}>users</Link> | 
       <Link href={'/user/tr5454hbf'}>detail</Link>
     </LayoutMain>
   );
 }
 
-export default Dashboard;
+export default UserList;

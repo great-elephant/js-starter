@@ -46,7 +46,7 @@ export interface UseRequestReturn<Caller extends APICaller<ClientRunner>> {
   error: ErrorResponse | null;
   data?: APIReturnedData<Caller>;
   meta?: MetaData;
-  setData: (data: APIReturnedData<Caller> | ((data?: APIReturnedData<Caller>) => APIReturnedData<Caller>)) => void;
+  setData: (data: (APIReturnedData<Caller> | undefined ) | ((data?: APIReturnedData<Caller>) => APIReturnedData<Caller> | undefined)) => void;
   setMeta: (meta: MetaData | ((meta?: MetaData) => MetaData)) => void;
   refresh: () => void;
   invoke: (...args: Parameters<Caller>) => Promise<ReturnedData<

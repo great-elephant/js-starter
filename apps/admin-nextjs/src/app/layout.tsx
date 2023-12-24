@@ -1,6 +1,7 @@
+import '@/assets/scss/global.scss';
 import type { Metadata } from 'next';
 import { ClienContainer } from '@/misc/client-container';
-import '@/assets/scss/global.scss';
+import { SessionProvider } from '@/misc/session/session-provider';
 
 export const metadata: Metadata = {
   title: 'Create Turborepo',
@@ -16,7 +17,9 @@ export default function RootLayout({
     <html lang='en' suppressHydrationWarning>
       <body>
         <ClienContainer>
-          {children}
+          <SessionProvider>
+            {children}
+          </SessionProvider>
         </ClienContainer>
       </body>
     </html>

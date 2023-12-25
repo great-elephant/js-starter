@@ -1,4 +1,3 @@
-import { clearAuthSession } from '@/misc/session/heper.client';
 import { useSession } from '@/misc/session';
 import {
   Center,

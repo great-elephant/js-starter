@@ -99,7 +99,7 @@ const SegmentTrigger = React.forwardRef<
 ));
 SegmentTrigger.displayName = TabsPrimitive.Trigger.displayName;
 
-const SegmentContent = React.forwardRef<
+const SegmentPanel = React.forwardRef<
   React.ElementRef<typeof TabsPrimitive.Content>,
   React.ComponentPropsWithoutRef<typeof TabsPrimitive.Content>
 >(({ className, ...props }, ref) => (
@@ -112,6 +112,6 @@ const SegmentContent = React.forwardRef<
     {...props}
   />
 ));
-SegmentContent.displayName = TabsPrimitive.Content.displayName;
+SegmentPanel.displayName = TabsPrimitive.Content.displayName;
 
-export { Segment, SegmentList, SegmentTrigger, SegmentContent };
+export { Segment, SegmentList, SegmentTrigger, SegmentPanel };

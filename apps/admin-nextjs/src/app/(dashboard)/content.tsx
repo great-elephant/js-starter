@@ -1,5 +1,5 @@
 'use client';
-import { Segment, SegmentContent, SegmentList, SegmentTrigger, Tab, TabPanel, TabList, TabTrigger } from '@sdks/uikit-react';
+import { Segment, SegmentPanel, SegmentList, SegmentTrigger, Tab, TabPanel, TabList, TabTrigger } from '@sdks/uikit-react';
 
 export function Content() {
   return (
@@ -23,9 +23,9 @@ export function Content() {
                 <SegmentTrigger value='setting'>Your setting</SegmentTrigger>
               </SegmentList>
             </div>
-            <SegmentContent value='account'>Make changes to your account here.</SegmentContent>
-            <SegmentContent value='password'>Change your password here.</SegmentContent>
-            <SegmentContent value='setting'>Change your setting here.</SegmentContent>
+            <SegmentPanel value='account'>Make changes to your account here.</SegmentPanel>
+            <SegmentPanel value='password'>Change your password here.</SegmentPanel>
+            <SegmentPanel value='setting'>Change your setting here.</SegmentPanel>
           </Segment>
         </TabPanel>
         <TabPanel value='password'>Change your password here.</TabPanel>

@@ -2,7 +2,7 @@
 import '@/misc/global/global.client';
 import { PropsWithChildren } from 'react';
 import { ReactQueryContainer } from '@sdks/api-react-query';
-import { Toaster, ThemeProvider } from '@sdks/uikit-react';
+import { Toaster, ThemeProvider, ModalContainer } from '@sdks/uikit-react';
 import { LazyMotion, domAnimation } from 'framer-motion';
 
 export function ClienContainer({ children }: PropsWithChildren) {
@@ -11,8 +11,9 @@ export function ClienContainer({ children }: PropsWithChildren) {
       <LazyMotion features={domAnimation}>
         <ThemeProvider>
           {children}
+          <ModalContainer />
+          <Toaster />
         </ThemeProvider>
-        <Toaster />
       </LazyMotion>
     </ReactQueryContainer>
   );

@@ -73,7 +73,7 @@ export function UserAuthForm() {
         <FieldError name='password' />
       </FieldGroup>
 
-      <Button loading={login.loading || login.isSuccess} label='Sign In' />
+      <Button type='submit' loading={login.loading || login.isSuccess} label='Sign In' />
     </FormReactive>
   );
 }

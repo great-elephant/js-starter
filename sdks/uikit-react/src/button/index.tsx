@@ -44,7 +44,7 @@ export interface ButtonProps
 }
 
 const Button = forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ className, disabled, loading, variant, size, children, label, asChild = false, ...props }, ref) => {
+  ({ className, type = 'button', disabled, loading, variant, size, children, label, asChild = false, ...props }, ref) => {
     const Comp = asChild ? Slot : 'button';
     const [isLoading, setLoading] = useState(loading);
 
@@ -58,6 +58,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       <Comp
         {...props}
         ref={ref}
+        type={type}
         disabled={disabled || isLoading}
         className={cn(buttonVariants({ variant, size, className }), {
           'relative': isLoading,

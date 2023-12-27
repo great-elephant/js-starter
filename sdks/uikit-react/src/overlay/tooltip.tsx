@@ -8,25 +8,27 @@ interface TooltipProps {
   content: React.ReactNode;
   children: React.ReactNode;
   className?: string;
+  side?: 'right' | 'top' | 'bottom' | 'left'
 }
-export function Tooltip({ content, children, className }: TooltipProps) {
+export function Tooltip({ content, side, children, className }: TooltipProps) {
   return (
     <TooltipPrimitive.Provider>
-      <TooltipPrimitive.Root delayDuration={0} defaultOpen>
+      <TooltipPrimitive.Root delayDuration={0}>
         <TooltipPrimitive.Trigger asChild>
           {children}
         </TooltipPrimitive.Trigger>
 
         <TooltipPrimitive.Portal>
           <TooltipPrimitive.Content
+            side={side}
             sideOffset={5}
             className={cn(
-              'z-50 overflow-hidden rounded-md bg-black p-2 text-sm text-white max-w-[280px]',
+              'z-50 overflow-hidden rounded-md bg-black px-4 py-1.5 text-sm text-white max-w-[280px]',
               className,
             )}
           >
             {content}
-            <TooltipPrimitive.Arrow width={15} height={7} className='fill-black' />
+            <TooltipPrimitive.Arrow width={14} height={5} className='fill-black' />
           </TooltipPrimitive.Content>
         </TooltipPrimitive.Portal>
       </TooltipPrimitive.Root>

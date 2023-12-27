@@ -1,12 +1,11 @@
-import { PropsWithChildren } from 'react';
-import { HeaderMain } from '../header-main';
+'use client';
+import { PropsWithChildren } from 'react';;
+import { cn } from '@uikit-react/index';
 
 export function LayoutMain({ children, className }: PropsWithChildren<{ className?: string }>) {
   return (
-    <>
-      <HeaderMain />
-
-      <main className={className}>{children}</main>
-    </>
+    <div className={cn('container', className)}>
+      {children}
+    </div>
   );
 };

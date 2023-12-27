@@ -1,0 +1,26 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "API CellularJS",
+      "type": "node-terminal",
+      "cwd": "${workspaceFolder}/apps/api-cellularjs",
+      "request": "launch",
+      "command": "yarn dev"
+    },
+    {
+      "name": "Admin NextJS",
+      "type": "node-terminal",
+      "cwd": "${workspaceFolder}/apps/admin-nextjs",
+      "request": "launch",
+      "command": "yarn dev"
+    },
+    {
+      "name": "Client NextJS",
+      "type": "node-terminal",
+      "cwd": "${workspaceFolder}/apps/client-nextjs",
+      "request": "launch",
+      "command": "yarn dev"
+    },
+  ],
+}

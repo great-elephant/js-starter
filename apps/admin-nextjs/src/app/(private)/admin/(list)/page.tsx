@@ -1,6 +1,6 @@
 'use client';
 
-import { useSession } from '@/misc/session';
+import { useSession, Guard } from '@/misc/session';
 import { LayoutMain } from '@/widgets/layout-main';
 import { ModalCreateAdmin } from '@/widgets/modal-create-admin';
 import { PageTitle } from '@/widgets/page-title';
@@ -17,9 +17,9 @@ function UserList(): JSX.Element {
       <div className='flex justify-between items-center'>
         <PageTitle>Admin</PageTitle>
 
-        {user?.role === AdminRole.SUPER_ADMIN && (
+        <Guard role={AdminRole.SUPER_ADMIN}>
           <Button onClick={() => openModal(ModalCreateAdmin)}><Plus width={16} /> Create admin</Button>
-        )}
+        </Guard>
       </div>
     </LayoutMain>
   );

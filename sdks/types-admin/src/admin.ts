@@ -15,6 +15,7 @@ export type MyInfoData = {
   firstName: string;
   lastName: string;
   email: string;
+  role: AdminRole;
   avatar: null | string;
   createdAt: string;
 }

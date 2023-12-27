@@ -5,6 +5,7 @@ import { cva, type VariantProps } from 'class-variance-authority';
 import { Slot } from '@radix-ui/react-slot';
 import { cn } from '@uikit-react/lib/utils';
 import { Spinner } from '@uikit-react/feedback';
+import { Center } from '..';
 
 const buttonVariants = cva(
   'select-none inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none',
@@ -22,15 +23,15 @@ const buttonVariants = cva(
         link: 'text-primary underline-offset-4 hover:underline',
       },
       size: {
-        default: 'h-10 px-4 py-2',
-        sm: 'h-9 rounded-md px-3',
+        sm: 'h-8 rounded-md px-3',
+        md: 'h-9 px-3 py-1',
         lg: 'h-11 rounded-md px-8',
         icon: 'h-10 w-10',
       },
     },
     defaultVariants: {
       variant: 'default',
-      size: 'default',
+      size: 'md',
     },
   }
 );
@@ -60,12 +61,13 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         ref={ref}
         type={type}
         disabled={disabled || isLoading}
-        className={cn(buttonVariants({ variant, size, className }), {
+        className={cn(buttonVariants({ variant, size, className }), 'flex gap-1 items-center', {
           'relative': isLoading,
         })}
       >
-        {isLoading && <Spinner />}
+        {isLoading && <Center className='absolute top-0 right-0 bottom-0 left-0'><Spinner /></Center>}
         {!isLoading && (children || label)}
+        {isLoading && <span className='invisible'>{(children || label)}</span>}
       </Comp>
     );
   }

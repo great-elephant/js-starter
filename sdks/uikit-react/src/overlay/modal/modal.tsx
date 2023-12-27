@@ -3,6 +3,7 @@ import clsx from 'clsx';
 import { Fade, FadeSlide } from '@uikit-react/animation';
 import { useModal } from './modal-context';
 import { X } from 'lucide-react';
+import { Button } from '@uikit-react/button';
 
 type ModalSize = 'xs' | 'sm' | 'none';
 
@@ -68,24 +69,18 @@ export function Modal({ children, className, size = 'sm' }: ModalProps) {
 }
 
 type ModalTitleProps = PropsWithChildren<{
-  hasCloseBtn?: boolean;
   className?: string;
 }>
 
 export function ModalHeader({
   children,
   className,
-  hasCloseBtn = true,
 }: ModalTitleProps) {
   const { modal } = useModal();
 
   return (
     <div className='flex justify-between items-center gap-4 px-4 py-3 border-b border-gray-200 bg-gray-50 rounded-t-lg'>
       <span className={clsx('font-semibold', className)}>{children}</span>
-
-      {hasCloseBtn && <button onClick={() => modal.modalRef.close()} className='duration-200 min-w-[28px] w-[28px] h-[28px] rounded-md outline-none focus:bg-gray-200 hover:bg-gray-200 flex items-center justify-center' aria-label='Close'>
-        <X className='text-gray-600' width={22} height={20} />
-      </button>}
     </div>
   );
 };
@@ -109,3 +104,10 @@ export function ModalFooter({ children, className }: FooterProps) {
     <div className={clsx(className, 'p-4')}>{children}</div>
   );
 };
+
+export function ModalCloseButton({ children }: PropsWithChildren) {
+  const { modal } = useModal();
+  return (
+    <Button onClick={() => modal.modalRef.close()} variant='outline'>{children}</Button>
+  );
+}

@@ -19,6 +19,7 @@ export class AdminMyInfoQry implements ServiceHandler {
       firstName,
       lastName,
       email,
+      role,
       avatar,
       createdAt,
     } = await adminProfileRepo.findOneBy({ id: adminData.id });
@@ -28,6 +29,7 @@ export class AdminMyInfoQry implements ServiceHandler {
       firstName,
       lastName,
       email,
+      role,
       avatar,
       createdAt,
     });

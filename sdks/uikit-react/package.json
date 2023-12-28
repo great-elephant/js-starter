@@ -5,6 +5,7 @@
   "scripts": {
     "lint": "eslint --ext .js,.ts,.tsx --fix"
   },
+  "types": "./src/index.ts",
   "exports": {
     ".": {
       "react-server": "./src/server.ts",

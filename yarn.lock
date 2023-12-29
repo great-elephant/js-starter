@@ -2009,6 +2009,24 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@sdks/nextjs@workspace:sdks/nextjs":
+  version: 0.0.0-use.local
+  resolution: "@sdks/nextjs@workspace:sdks/nextjs"
+  dependencies:
+    "@sdks/eslint-config": "npm:*"
+    "@sdks/typescript-config": "npm:*"
+    "@sdks/uikit-react": "npm:*"
+    "@types/eslint": "npm:*"
+    "@types/react": "npm:*"
+    "@types/react-dom": "npm:*"
+    class-variance-authority: "npm:*"
+    eslint: "npm:*"
+    lucide-react: "npm:*"
+    next: "npm:*"
+    react: "npm:*"
+  languageName: unknown
+  linkType: soft
+
 "@sdks/types-admin@npm:*, @sdks/types-admin@workspace:sdks/types-admin":
   version: 0.0.0-use.local
   resolution: "@sdks/types-admin@workspace:sdks/types-admin"
@@ -2173,7 +2191,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/eslint@npm:*, @types/eslint@npm:^8.44.7":
+"@types/eslint@npm:^8.44.7":
   version: 8.44.9
   resolution: "@types/eslint@npm:8.44.9"
   dependencies:
@@ -2354,7 +2372,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react-dom@npm:^18.0.7, @types/react-dom@npm:^18.2.0":
+"@types/react-dom@npm:^18.2.0":
   version: 18.2.17
   resolution: "@types/react-dom@npm:18.2.17"
   dependencies:
@@ -2363,7 +2381,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react@npm:*, @types/react@npm:^18.0.22, @types/react@npm:^18.2.0":
+"@types/react@npm:^18.2.0":
   version: 18.2.45
   resolution: "@types/react@npm:18.2.45"
   dependencies:

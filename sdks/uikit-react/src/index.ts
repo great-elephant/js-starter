@@ -7,4 +7,5 @@ export * from './misc';
 export * from './overlay';
 export * from './panel';
 export * from './theme';
+export * from './table';
 export * from './lib/utils';

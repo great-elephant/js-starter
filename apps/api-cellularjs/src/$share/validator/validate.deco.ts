@@ -31,7 +31,7 @@ class ValidateReqProxy {
     const { irq, ctx } = this;
     const data = ctx.meta?.dataGetter ? ctx.meta.dataGetter(irq) : irq.body;
     const dto = plainToInstance(ctx.token, data);
-    const errs = await validate(dto, {});
+    const errs = await validate(dto);
 
     if (!errs.length) {
       return dto;

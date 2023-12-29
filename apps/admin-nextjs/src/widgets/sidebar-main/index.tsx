@@ -3,6 +3,8 @@
 import Link from 'next/link';
 import { ActivitySquare, AlarmClock, DollarSign, HopOff, Package, Network, Users } from 'lucide-react';
 import { Tooltip } from '@sdks/uikit-react';
+import { Guard } from '@/misc/session';
+import { AdminRole } from '@sdks/types-admin';
 
 export function SideBarMain() {
   return (
@@ -16,11 +18,13 @@ export function SideBarMain() {
       <DollarSign strokeWidth={1.5} />
       <HopOff strokeWidth={1.5} />
       <Package strokeWidth={1.5} />
-      <Tooltip content='Admin management' side='right'>
-        <Link href={'/admin'}>
-          <Network strokeWidth={1.5} />
-        </Link>
-      </Tooltip>
+      <Guard role={AdminRole.SUPER_ADMIN}>
+        <Tooltip content='Admin management' side='right'>
+          <Link href={'/admin'}>
+            <Network strokeWidth={1.5} />
+          </Link>
+        </Tooltip>
+      </Guard>
       <Tooltip content='User management' side='right'>
         <Link href={'/user'}>
           <Users strokeWidth={1.5} />

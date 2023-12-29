@@ -2,7 +2,6 @@ import React, { PropsWithChildren, useEffect, useRef, useState } from 'react';
 import clsx from 'clsx';
 import { Fade, FadeSlide } from '@uikit-react/animation';
 import { useModal } from './modal-context';
-import { X } from 'lucide-react';
 import { Button } from '@uikit-react/button';
 
 type ModalSize = 'xs' | 'sm' | 'none';
@@ -56,7 +55,7 @@ export function Modal({ children, className, size = 'sm' }: ModalProps) {
         <div className={clsx(
           'relative bg-white mx-auto shadow-md rounded-lg',
           {
-            'min-w-[300px] max-w-[300px] sm:min-w-[440px] sm:max-w-[440px]': size === 'sm',
+            'min-w-[300px] max-w-[300px] sm:min-w-[420px] sm:max-w-[420px]': size === 'sm',
             'min-w-[300px] max-w-[300px] sm:min-w-[320px] sm:max-w-[320px]': size === 'xs',
           },
           className,

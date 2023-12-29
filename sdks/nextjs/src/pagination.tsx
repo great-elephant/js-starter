@@ -1,8 +1,6 @@
 import * as React from 'react';
 import { ChevronLeft, ChevronRight, MoreHorizontal } from 'lucide-react';
-
 import { ButtonProps, buttonVariants, cn } from '@sdks/uikit-react';
-import { Link } from './link';
 
 const PaginationNav = ({ className, ...props }: React.ComponentProps<'nav'>) => (
   <nav
@@ -25,46 +23,35 @@ const PaginationContent = React.forwardRef<
 ));
 PaginationContent.displayName = 'PaginationContent';
 
-const PaginationItem = React.forwardRef<
-  HTMLDivElement,
-  React.ComponentProps<'div'>
->(({ className, ...props }, ref) => (
-  <div ref={ref} className={cn('', className)} {...props} />
-));
-PaginationItem.displayName = 'PaginationItem';
-
-type PaginationLinkProps = {
+type PaginationButtonProps = {
   isActive?: boolean;
   size?: ButtonProps['size']
-} & React.ComponentProps<'div'>
+} & React.ComponentProps<'button'>
 
-const PaginationLink = ({
+const PaginationButton = ({
   className,
   isActive,
   size = 'icon',
   ...props
-}: PaginationLinkProps) => (
-  <PaginationItem>
-    <div
-      aria-current={isActive ? 'page' : undefined}
-      className={cn(
-        buttonVariants({
-          variant: isActive ? 'outline' : 'ghost',
-          size,
-        }),
-        className
-      )}
-      {...props}
-    />
-  </PaginationItem>
+}: PaginationButtonProps) => (
+  <button
+    aria-current={isActive ? 'page' : undefined}
+    className={cn(
+      buttonVariants({
+        variant: isActive ? 'outline' : 'ghost',
+        size,
+      }),
+      className
+    )}
+    {...props}
+  />
 );
-PaginationLink.displayName = 'PaginationLink';
 
 const PaginationPrevious = ({
   className,
   ...props
-}: React.ComponentProps<typeof PaginationLink>) => (
-  <PaginationLink
+}: React.ComponentProps<typeof PaginationButton>) => (
+  <PaginationButton
     aria-label='Go to previous page'
     size='md'
     className={cn('gap-1 pl-2.5', className)}
@@ -72,15 +59,14 @@ const PaginationPrevious = ({
   >
     <ChevronLeft className='h-4 w-4' />
     <span>Previous</span>
-  </PaginationLink>
+  </PaginationButton>
 );
-PaginationPrevious.displayName = 'PaginationPrevious';
 
 const PaginationNext = ({
   className,
   ...props
-}: React.ComponentProps<typeof PaginationLink>) => (
-  <PaginationLink
+}: React.ComponentProps<typeof PaginationButton>) => (
+  <PaginationButton
     aria-label='Go to next page'
     size='md'
     className={cn('gap-1 pr-2.5', className)}
@@ -88,7 +74,7 @@ const PaginationNext = ({
   >
     <span>Next</span>
     <ChevronRight className='h-4 w-4' />
-  </PaginationLink>
+  </PaginationButton>
 );
 
 const PaginationEllipsis = ({
@@ -97,7 +83,7 @@ const PaginationEllipsis = ({
 }: React.ComponentProps<'span'>) => (
   <span
     aria-hidden
-    className={cn('flex h-9 w-9 items-center justify-center', className)}
+    className={cn('flex h-9 w-10 items-center justify-center', className)}
     {...props}
   >
     <MoreHorizontal className='h-4 w-4' />
@@ -127,31 +113,23 @@ export function Pagination({
     <PaginationNav>
       <PaginationContent>
         {page !== 1 && (
-          <PaginationItem onClick={() => onPageChange({ page: page - 1, size })}>
-            <PaginationPrevious />
-          </PaginationItem>
+          <PaginationPrevious onClick={() => onPageChange({ page: page - 1, size })} />
         )}
 
         {pages.map((p, idx) => {
           if (p === null) return (
-            <PaginationItem key={idx}>
-              <PaginationEllipsis />
-            </PaginationItem>
+            <PaginationEllipsis key={idx} />
           );
 
           return (
-            <PaginationItem key={idx} onClick={() => onPageChange({ page: p, size })}>
-              <PaginationLink isActive={page === p}>
-                {p}
-              </PaginationLink>
-            </PaginationItem>
+            <PaginationButton key={idx} onClick={() => onPageChange({ page: p, size })} isActive={page === p}>
+              {p}
+            </PaginationButton>
           );
         })}
 
         {page !== maxPage && (
-          <PaginationItem onClick={() => onPageChange({ page: page + 1, size })}>
-            <PaginationNext />
-          </PaginationItem>
+          <PaginationNext onClick={() => onPageChange({ page: page + 1, size })} />
         )}
       </PaginationContent>
     </PaginationNav>

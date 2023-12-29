@@ -56,7 +56,7 @@ export function Modal({ children, className, size = 'sm' }: ModalProps) {
         <div className={clsx(
           'relative bg-white mx-auto shadow-md rounded-lg',
           {
-            'min-w-[300px] max-w-[300px] sm:min-w-[380px] sm:max-w-[380px]': size === 'sm',
+            'min-w-[300px] max-w-[300px] sm:min-w-[440px] sm:max-w-[440px]': size === 'sm',
             'min-w-[300px] max-w-[300px] sm:min-w-[320px] sm:max-w-[320px]': size === 'xs',
           },
           className,
@@ -68,20 +68,20 @@ export function Modal({ children, className, size = 'sm' }: ModalProps) {
   );
 }
 
-type ModalTitleProps = PropsWithChildren<{
+type ModalHeaderProps = PropsWithChildren<{
   className?: string;
 }>
 
 export function ModalHeader({
   children,
   className,
-}: ModalTitleProps) {
+}: ModalHeaderProps) {
   const { modal } = useModal();
 
   return (
-    <div className='flex justify-between items-center gap-4 px-4 py-3 border-b border-gray-200 bg-gray-50 rounded-t-lg'>
+    <header className='flex justify-between items-center gap-4 px-6 pt-6 text-xl rounded-t-lg'>
       <span className={clsx('font-semibold', className)}>{children}</span>
-    </div>
+    </header>
   );
 };
 
@@ -91,7 +91,7 @@ type BodyProps = PropsWithChildren<{
 
 export function ModalBody({ children, className }: BodyProps) {
   return (
-    <div className={clsx(className, 'p-4')}>{children}</div>
+    <div className={clsx('p-6', className)}>{children}</div>
   );
 };
 
@@ -101,13 +101,13 @@ type FooterProps = PropsWithChildren<{
 
 export function ModalFooter({ children, className }: FooterProps) {
   return (
-    <div className={clsx(className, 'p-4')}>{children}</div>
+    <footer className={clsx('flex justify-between pb-6 px-6', className)}>{children}</footer>
   );
 };
 
 export function ModalCloseButton({ children }: PropsWithChildren) {
   const { modal } = useModal();
   return (
-    <Button onClick={() => modal.modalRef.close()} variant='outline'>{children}</Button>
+    <Button onClick={() => modal.modalRef.close()} variant='ghost'>{children}</Button>
   );
 }

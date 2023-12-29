@@ -7,6 +7,6 @@ export interface FieldGroupProps extends PropsWithChildren {
 
 export function FieldGroup({ children, className }: FieldGroupProps) {
   return (
-    <div className={cn('flex flex-col gap-1', className)}>{children}</div>
+    <div className={cn('flex flex-col gap-1.5 w-full', className)}>{children}</div>
   );
 }

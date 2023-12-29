@@ -14,6 +14,8 @@ export type { SliderProps } from './slider';
 
 export { FieldGroup } from './field-group';
 
+export { FieldDesc } from './field-desc';
+
 export { FieldError } from './field-error';
 export type { FieldErrorProps } from './field-error';
 

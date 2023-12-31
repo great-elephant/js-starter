@@ -11,7 +11,7 @@ import {
 import { OnPageChange, Pagination } from '@sdks/nextjs';
 import { useQuery } from '@sdks/api-react-query';
 import { useMemo, useState } from 'react';
-import { AdminSearchParams } from '@sdks/api-admin/src/callers/admin';
+import { AdminSearchParams } from '@sdks/api-admin';
 
 export function TableUsers() {
   const [searchParams, setSearchParams] = useState<AdminSearchParams>({

@@ -1,11 +1,12 @@
 import { AdminClient, DefaultRunner } from '@sdks/api-admin';
 import { API_BASE_URL } from '@/misc/constants';
-import { getToken } from '@/misc/session/heper.client';
+import { ADMIN_TKN } from '@sdks/types-admin';
+import { getServerData } from '@/misc/server';
 
 const runner = new DefaultRunner({
   API_BASE_URL,
   headers: (headers) => {
-    const tkn = getToken();
+    const tkn = getServerData()[ADMIN_TKN];
     if (tkn) {
       headers['authorization'] = `Bearer ${tkn}`;
     }
@@ -18,6 +19,4 @@ const client = new AdminClient({
   runner,
 });
 
-if (typeof window !== 'undefined') {
-  window.client = client;
-}
+global.client = client;

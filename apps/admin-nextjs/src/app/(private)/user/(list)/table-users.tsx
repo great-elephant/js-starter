@@ -10,22 +10,20 @@ import {
 } from '@sdks/uikit-react';
 import { OnPageChange, Pagination } from '@sdks/nextjs';
 import { useQuery } from '@sdks/api-react-query';
-import { useMemo, useState } from 'react';
-import { UserSearchParams } from '@sdks/api-admin';
 
 export function TableUsers() {
-  const [searchParams, setSearchParams] = useState<UserSearchParams>({
-    page: 1,
-    size: 10,
-    order: [['id', 'DESC']],
+  const { data, meta, params, setParams } = useQuery(client.user.search, {
+    params: [{
+      page: 1,
+      size: 10,
+      order: [['id', 'DESC']],
+    }],
   });
 
-  const params = useMemo<[UserSearchParams]>(() => [searchParams], [searchParams]);
-  const { data, meta } = useQuery(client.user.search, { params });
-
-  const onPageChange: OnPageChange = (data) => {
-    setSearchParams(params => ({ ...params, ...data }));
-  };
+  const onPageChange: OnPageChange = (data) => setParams(params => [{
+    ...params?.[0],
+    ...data,
+  }]);
 
   return (
     <div className='flex flex-col gap-4'>
@@ -54,8 +52,8 @@ export function TableUsers() {
 
       <Pagination
         onPageChange={onPageChange}
-        page={searchParams.page!}
-        size={searchParams.size}
+        page={params?.[0].page}
+        size={params?.[0].size}
         total={meta?.paging?.total}
       />
     </div>

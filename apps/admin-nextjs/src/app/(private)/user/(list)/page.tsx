@@ -1,11 +1,11 @@
 import { LayoutMain } from '@/widgets/layout-main';
-import { PageTitle } from '@/widgets/page-title';
+import { TitlePage } from '@/widgets/title-page';
 import Link from 'next/link';
 
 function UserList(): JSX.Element {
   return (
     <LayoutMain>
-      <PageTitle>Disable user</PageTitle>
+      <TitlePage>Disable user</TitlePage>
       list
       <Link href={'/user'}>users</Link> | 
       <Link href={'/user/tr5454hbf'}>detail</Link>

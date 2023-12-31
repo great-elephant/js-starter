@@ -1,13 +1,11 @@
 import { LayoutMain } from '@/widgets/layout-main';
-import { Heading } from '@sdks/uikit-react';
-import Link from 'next/link';
 import { Content } from './content';
-import { PageTitle } from '@/widgets/page-title';
+import { TitlePage } from '@/widgets/title-page';
 
 function Dashboard(): JSX.Element {
   return (
     <LayoutMain className='container'>
-      <PageTitle>Dashboard</PageTitle>
+      <TitlePage>Dashboard</TitlePage>
       {/* <Link href={'/user'}>users</Link> |
       <Link href={'/user/tr5454hbf'}>detail</Link> */}
       <Content />

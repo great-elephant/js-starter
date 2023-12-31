@@ -1,8 +1,8 @@
 import { useMutation } from '@tanstack/react-query';
-import { ErrorResponse, MetaData, SuccessResponse } from '@sdks/types-shared';
+import { ErrorResponse, SuccessResponse } from '@sdks/types-shared';
 import { ClientRunner, SendOptions, overrideCaller } from '@sdks/api-client';
 import { APICaller } from '@sdks/api-core';
-import { APIReturnedData, ReturnedData, UseRequestReturn } from './type';
+import { APIReturnedData, UseRequestReturn } from './type';
 import { useAbort } from './use-abort';
 
 type UseCommandReturn<C extends APICaller<ClientRunner>> = Omit<UseRequestReturn<C>, 'refresh' | 'setData' | 'setMeta'>

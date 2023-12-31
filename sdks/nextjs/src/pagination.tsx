@@ -93,7 +93,7 @@ const PaginationEllipsis = ({
 
 interface PaginationProps {
   total?: number;
-  page: number;
+  page?: number;
   size?: number;
   onPageChange: OnPageChange;
 }
@@ -102,18 +102,19 @@ export type OnPageChange = (data: { page: number; size: number }) => void;
 
 export function Pagination({
   onPageChange,
-  page = 1,
+  page,
   size = 10,
-  total = 0,
+  total,
 }: PaginationProps) {
-  const maxPage = Math.ceil(total / size);
-  const pages = React.useMemo(() => getPages(maxPage, page), [maxPage, page]);
+  const maxPage = Math.ceil((total || 0) / size);
+  const currentPage = page || 1;
+  const pages = React.useMemo(() => getPages(maxPage, currentPage), [maxPage, currentPage]);
 
   return (
     <PaginationNav>
       <PaginationContent>
         {page !== 1 && (
-          <PaginationPrevious onClick={() => onPageChange({ page: page - 1, size })} />
+          <PaginationPrevious onClick={() => onPageChange({ page: currentPage - 1, size })} />
         )}
 
         {pages.map((p, idx) => {
@@ -129,7 +130,7 @@ export function Pagination({
         })}
 
         {page !== maxPage && (
-          <PaginationNext onClick={() => onPageChange({ page: page + 1, size })} />
+          <PaginationNext onClick={() => onPageChange({ page: currentPage + 1, size })} />
         )}
       </PaginationContent>
     </PaginationNav>

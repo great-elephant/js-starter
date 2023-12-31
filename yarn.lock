@@ -115,6 +115,7 @@ __metadata:
     "@types/node": "npm:^17.0.12"
     "@types/react": "npm:^18.0.22"
     "@types/react-dom": "npm:^18.0.7"
+    "@types/rtl-detect": "npm:^1"
     autoprefixer: "npm:^10.4.16"
     eslint: "npm:^8.53.0"
     next: "npm:^14.0.3"
@@ -122,6 +123,7 @@ __metadata:
     postcss: "npm:^8.4.32"
     react: "npm:^18.2.0"
     react-dom: "npm:^18.2.0"
+    rtl-detect: "npm:^1.1.2"
     sass: "npm:^1.69.5"
     tailwind-merge: "npm:^2.1.0"
     tailwindcss: "npm:^3.3.6"
@@ -2467,6 +2469,13 @@ __metadata:
     "@types/scheduler": "npm:*"
     csstype: "npm:^3.0.2"
   checksum: 4cc650c47ffb88baac29fb7a74e842e4af4a55f437086ef70250fdc75f0a5f2fcf8adc272d05ab2e00b1de6e14613296881271caee037dadf9130fdeb498c59e
+  languageName: node
+  linkType: hard
+
+"@types/rtl-detect@npm:^1":
+  version: 1.0.3
+  resolution: "@types/rtl-detect@npm:1.0.3"
+  checksum: 5ed41bd66d97a52dfcf6d715e0a447a2f88724fa442818c879c30423bf64c2f2c62091e2da62aaa02f302139f18109af5bfee6e50b3ba79899201401c49a0b09
   languageName: node
   linkType: hard
 
@@ -9027,6 +9036,13 @@ __metadata:
   bin:
     rimraf: bin.js
   checksum: 9cb7757acb489bd83757ba1a274ab545eafd75598a9d817e0c3f8b164238dd90eba50d6b848bd4dcc5f3040912e882dc7ba71653e35af660d77b25c381d402e8
+  languageName: node
+  linkType: hard
+
+"rtl-detect@npm:^1.1.2":
+  version: 1.1.2
+  resolution: "rtl-detect@npm:1.1.2"
+  checksum: 1b92888aafca1593314f837e83fdf02eb208faae3e713ab87c176804728efd3b1980d53b64f65f1fa593348087e852c5cd729b7b9372950f6e9b7be489afc0ca
   languageName: node
   linkType: hard
 

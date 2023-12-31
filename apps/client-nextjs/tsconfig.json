@@ -3,18 +3,17 @@
   "compilerOptions": {
     // https://github.com/microsoft/TypeScript/issues/53286
     "useDefineForClassFields": false,
-    "declarationMap": false,
     "plugins": [
       {
         "name": "next"
       }
     ],
+    "incremental": true,
     "baseUrl": "./src",
     "paths": {
       "@/*": ["./*"],
-      "@uikit-react/*": ["../../sdks/uikit-react/src/*"]
+      "@uikit-react/*": ["../../../sdks/uikit-react/src/*"]
     },
-    "incremental": true,
   },
   "include": [
     "next-env.d.ts",

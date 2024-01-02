@@ -2,9 +2,8 @@ import '@/misc/global/global.server';
 import { NextIntlClientProvider, useMessages } from 'next-intl';
 import { unstable_setRequestLocale } from 'next-intl/server';
 import { ClienContainer } from '@/misc/client-container';
-import { initServerData } from '@/misc/server';
+import { initServerData } from '@/misc/server-data';
 import { useTextDirection } from '@/misc/rtl-detect';
-import { locales } from '@/misc/constants';
 
 export default function LocaleLayout({ children, params: { locale } }: any) {
   unstable_setRequestLocale(locale);
@@ -24,8 +23,4 @@ export default function LocaleLayout({ children, params: { locale } }: any) {
       </body>
     </html>
   );
-}
-
-export function generateStaticParams() {
-  return locales.map((locale) => ({ locale }));
 }

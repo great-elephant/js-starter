@@ -2,7 +2,7 @@
 
 import { useTranslations } from 'next-intl';
 
-export function Com() {
+export default function Login() {
   const t = useTranslations('index');
-  return <h1>{t('title')}</h1>;
+  return <h1>login: {t('title')}</h1>;
 }

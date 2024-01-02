@@ -1,7 +1,7 @@
 import { Client, DefaultRunner } from '@sdks/api-client';
 import { API_BASE_URL } from '@/misc/constants';
 import { USER_TKN } from '@sdks/types-shared';
-import { getServerData } from '@/misc/server';
+import { getServerData } from '@/misc/server-data';
 
 const runner = new DefaultRunner({
   API_BASE_URL,

@@ -1,5 +1,5 @@
 import createMiddleware from 'next-intl/middleware';
-import { locales } from '@/misc/constants';
+import { locales, localePrefix } from '@sdks/nextjs';
 
 export default createMiddleware({
   // A list of all locales that are supported
@@ -8,7 +8,7 @@ export default createMiddleware({
   // Used when no locale matches
   defaultLocale: 'en',
 
-  localePrefix: 'as-needed',
+  localePrefix,
 });
 
 export const config = {

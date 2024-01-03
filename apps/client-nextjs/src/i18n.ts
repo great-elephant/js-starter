@@ -1,6 +1,6 @@
 import { notFound } from 'next/navigation';
 import { getRequestConfig } from 'next-intl/server';
-import { locales } from '@/misc/constants';
+import { locales } from '@sdks/nextjs';
 
 export default getRequestConfig(async ({ locale }) => {
   // Validate that the incoming `locale` parameter is valid

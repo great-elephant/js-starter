@@ -1,2 +1,2 @@
 export * from './pagination';
-export * from './link';
+export * from './navigation';

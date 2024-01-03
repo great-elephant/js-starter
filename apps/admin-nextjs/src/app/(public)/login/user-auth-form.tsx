@@ -1,11 +1,12 @@
 'use client';
 
 import * as React from 'react';
+import { useSearchParams } from 'next/navigation';
+import { useRouter } from '@sdks/nextjs';
 import { Button, Label, FieldGroup, toast } from '@sdks/uikit-react';
 import { y, Input, FieldError, FormReactive } from '@sdks/uikit-react/form-reactive';
 import { useCommand } from '@sdks/api-react-query';
 import { useSession } from '@/misc/session';
-import { useRouter, useSearchParams } from 'next/navigation';
 
 type UserFormValues = {
   email: string;

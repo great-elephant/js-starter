@@ -1,7 +1,7 @@
 'use client';
 
 import { useRef } from 'react';
-import { useRouter } from 'next/navigation';
+import { useRouter } from '@sdks/nextjs';
 import { FormReactive, Input, FieldError, y, populateError, UseFormReturn } from '@sdks/uikit-react/form-reactive';
 import { Button, FieldGroup, Label } from '@sdks/uikit-react';
 import { useCommand } from '@sdks/api-react-query';

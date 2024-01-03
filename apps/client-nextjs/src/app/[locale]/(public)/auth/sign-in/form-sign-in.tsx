@@ -4,8 +4,8 @@ import { Link } from '@sdks/nextjs';
 import { FormReactive, Input, FieldError, y } from '@sdks/uikit-react/form-reactive';
 import { Button, Label, toast } from '@sdks/uikit-react';
 import { useCommand } from '@sdks/api-react-query';
+import { useRouter } from '@sdks/nextjs';
 import { useSession } from '@/misc/session';
-import { useRouter } from 'next/navigation';
 
 type FornSignInValues = {
   email: string;
@@ -30,8 +30,8 @@ export function FormSignIn() {
       return;
     }
 
-    router.push('/');
     saveCredential(data);
+    router.push('/');
   };
 
   return (

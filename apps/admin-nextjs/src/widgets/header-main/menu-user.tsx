@@ -10,7 +10,7 @@ import {
   Skeleton,
   Text,
 } from '@sdks/uikit-react';
-import { useRouter } from 'next/navigation';
+import { useRouter } from '@sdks/nextjs';
 
 export function MenuUser() {
   const router = useRouter();

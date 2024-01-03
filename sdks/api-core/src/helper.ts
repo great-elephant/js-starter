@@ -18,7 +18,7 @@ export function createApiCollection<
   type ObjType = typeof obj;
   type ObjKey = keyof ObjType;
   type ApiCollection = {
-    [K in ObjKey]: (this: unknown, ...args: Parameters<ObjType[K]>) => ReturnType<ObjType[K]>;
+    [K in ObjKey]: (this: ClientRunner, ...args: Parameters<ObjType[K]>) => ReturnType<ObjType[K]>;
   };
 
   return Object.keys(obj).reduce((prev, key) => {

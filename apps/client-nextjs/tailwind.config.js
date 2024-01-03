@@ -1,7 +1,8 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  darkMode: ['class'],
   content: [
-    './app/**/*.{ts,tsx}',
+    './src/**/*.{ts,tsx}',
     '../../sdks/uikit-react/src/**/*.{ts,tsx}',
   ],
   theme: {
@@ -71,4 +72,3 @@ module.exports = {
   },
   plugins: [require('tailwindcss-animate')],
 };
-

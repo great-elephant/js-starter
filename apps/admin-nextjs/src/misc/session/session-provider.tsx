@@ -1,8 +1,9 @@
 'use client';
 import { PropsWithChildren, useEffect, useState } from 'react';
 import { useQuery } from '@sdks/api-react-query';
+import { AdminAuthData } from '@sdks/types-admin';
 import { SessionContext } from './session-context';
-import { isLoggedIn, clearAuthSession } from './heper.client';
+import { isLoggedIn, clearAuthSession, saveAuthSession } from './heper.client';
 
 export const SessionProvider = ({ children }: PropsWithChildren) => {
   const [loggedIn, setLoggedIn] = useState(false);
@@ -20,7 +21,8 @@ export const SessionProvider = ({ children }: PropsWithChildren) => {
     setLoggedIn(false);
   }
 
-  function fetchUser() {
+  function saveCredential(data: AdminAuthData) {
+    saveAuthSession(data);
     setLoggedIn(true);
   }
 
@@ -29,7 +31,7 @@ export const SessionProvider = ({ children }: PropsWithChildren) => {
       user: myInfo.data,
       loading: myInfo.loading,
       logout,
-      fetchUser,
+      saveCredential,
       setUser: myInfo.setData,
     }} >
       {children}

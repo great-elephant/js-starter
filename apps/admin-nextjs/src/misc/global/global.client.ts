@@ -20,4 +20,6 @@ const client = new AdminClient({
 
 if (typeof window !== 'undefined') {
   window.client = client;
+} else {
+  global.client = client;
 }

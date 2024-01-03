@@ -1,11 +1,11 @@
 import { createContext, useContext } from 'react';
-import { MyInfoData } from '@sdks/types-shared';
+import { MyInfoData, UserAuthData } from '@sdks/types-shared';
 
 export type SessionContextValues = {
   user?: MyInfoData;
   loading: boolean;
   setUser: (user: MyInfoData) => void;
-  fetchUser: () => void;
+  saveCredential: (data: UserAuthData) => void;
   logout: () => void;
 }
 

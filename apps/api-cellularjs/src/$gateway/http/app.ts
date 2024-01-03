@@ -14,7 +14,7 @@ export async function initApp() {
   const app = express();
   const httpServer = createServer(app);
   const { CLIENT_BASE_URL } = env();
-  app.use(cors({ credentials: true, origin: CLIENT_BASE_URL }));
+  app.use(cors({ credentials: true, origin: CLIENT_BASE_URL.split(',') }));
   app.use(cookieParser());
   app.use(express.urlencoded({ extended: true }));
   app.use(express.json());

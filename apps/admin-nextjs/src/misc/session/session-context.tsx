@@ -1,11 +1,11 @@
 import { createContext, useContext } from 'react';
-import { MyInfoData } from '@sdks/types-admin';
+import { AdminAuthData, MyInfoData } from '@sdks/types-admin';
 
 export type SessionContextValues = {
   user?: MyInfoData;
   loading: boolean;
   setUser: (user: MyInfoData) => void;
-  fetchUser: () => void;
+  saveCredential: (data: AdminAuthData) => void;
   logout: () => void;
 }
 

@@ -1,4 +1,5 @@
 import '@/assets/scss/global.scss';
+import '@/misc/global/global.server';
 import {ReactNode} from 'react';
 
 type Props = {

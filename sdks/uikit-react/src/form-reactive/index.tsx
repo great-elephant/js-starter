@@ -11,4 +11,5 @@ export { Switch } from './switch';
 export { Textarea } from './textarea';
 export { FieldError } from './field-error';
 export * as y from 'yup';
+export * from 'react-hook-form';
 export * from './misc';

@@ -1,7 +1,7 @@
 import { ErrorResponse } from '@sdks/types-shared';
 import { UseFormReturn } from 'react-hook-form';
 
-export function populateError(error: ErrorResponse, form: UseFormReturn) {
+export function populateError(error: ErrorResponse, form: UseFormReturn<any>) {
   if (!error.errors) return;
 
   error.errors.forEach(err => {

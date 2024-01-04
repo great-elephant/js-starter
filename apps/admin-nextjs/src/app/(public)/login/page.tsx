@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 import { Text, Heading } from '@sdks/uikit-react';
-import { UserAuthForm } from './user-auth-form';
+import { FormLogin } from './form-login';
 
 export const metadata: Metadata = {
   title: 'Authentication',
@@ -47,7 +47,7 @@ export default function AuthenticationPage() {
             </Heading>
           </div>
 
-          <UserAuthForm />
+          <FormLogin />
         </div>
       </div>
     </div>

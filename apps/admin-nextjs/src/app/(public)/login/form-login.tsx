@@ -8,23 +8,23 @@ import { y, Input, FieldError, FormReactive } from '@sdks/uikit-react/form-react
 import { useCommand } from '@sdks/api-react-query';
 import { useSession } from '@/misc/session';
 
-type UserFormValues = {
+type FormLoginValues = {
   email: string;
   password: string;
 }
 
-const schema: y.ObjectSchema<UserFormValues> = y.object({
+const schema: y.ObjectSchema<FormLoginValues> = y.object({
   email: y.string().required(),
   password: y.string().required(),
 });
 
-export function UserAuthForm() {
+export function FormLogin() {
   const router = useRouter();
   const params = useSearchParams();
   const login = useCommand(client.admin.login);
   const { saveCredential } = useSession();
 
-  async function onSubmit(values: UserFormValues) {
+  async function onSubmit(values: FormLoginValues) {
     const { data, error } = await login.invoke(values);
 
     if (error) {
@@ -39,7 +39,7 @@ export function UserAuthForm() {
   }
 
   return (
-    <FormReactive<UserFormValues>
+    <FormReactive<FormLoginValues>
       className='flex flex-col gap-4'
       onSubmit={onSubmit}
       schema={schema}

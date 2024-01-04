@@ -1,3 +1,5 @@
+// Cre: UI getting from supabase
+
 export default function ForgotPassword() {
   return (
     <div className='min-h-full flex flex-col'>

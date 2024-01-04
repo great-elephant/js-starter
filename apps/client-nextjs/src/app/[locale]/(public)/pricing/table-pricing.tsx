@@ -1,3 +1,4 @@
+// Cre: UI getting from supabase
 import { CheckCircle, MinusCircle } from 'lucide-react';
 
 export function TablePricing() {

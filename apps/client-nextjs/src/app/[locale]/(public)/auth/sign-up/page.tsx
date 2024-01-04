@@ -1,3 +1,5 @@
+// Cre: UI getting from supabase
+
 import { GithubIcon } from 'lucide-react';
 import { Link } from '@sdks/nextjs';
 import { FormSignUp } from './form-sign-up';

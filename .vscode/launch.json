@@ -9,6 +9,13 @@
       "command": "yarn dev"
     },
     {
+      "name": "API NestJS",
+      "type": "node-terminal",
+      "cwd": "${workspaceFolder}/apps/api-nestjs",
+      "request": "launch",
+      "command": "yarn start:dev"
+    },
+    {
       "name": "Admin NextJS",
       "type": "node-terminal",
       "cwd": "${workspaceFolder}/apps/admin-nextjs",

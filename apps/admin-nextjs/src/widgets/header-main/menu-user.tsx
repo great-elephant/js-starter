@@ -1,3 +1,4 @@
+import { useRouter } from 'next/navigation';
 import { useSession } from '@/misc/session';
 import {
   Center,
@@ -10,7 +11,6 @@ import {
   Skeleton,
   Text,
 } from '@sdks/uikit-react';
-import { useRouter } from '@sdks/nextjs';
 
 export function MenuUser() {
   const router = useRouter();

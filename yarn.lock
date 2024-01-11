@@ -115,22 +115,24 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@app/api-cellularjs@workspace:apps/api-cellularjs"
   dependencies:
-    "@cellularjs/cli": "npm:^0.18.1"
-    "@cellularjs/di": "npm:^0.18.1"
-    "@cellularjs/env": "npm:^0.18.1"
-    "@cellularjs/express-proxy": "npm:^0.18.1"
-    "@cellularjs/logger": "npm:^0.18.1"
-    "@cellularjs/net": "npm:^0.18.1"
-    "@cellularjs/typeorm": "npm:^0.18.1"
+    "@cellularjs/cli": "npm:^0.19.0"
+    "@cellularjs/di": "npm:^0.19.0"
+    "@cellularjs/env": "npm:^0.19.0"
+    "@cellularjs/express-proxy": "npm:^0.19.0"
+    "@cellularjs/logger": "npm:^0.19.0"
+    "@cellularjs/net": "npm:^0.19.0"
+    "@cellularjs/typeorm": "npm:^0.19.0"
     "@sdks/eslint-config": "npm:*"
     "@sdks/types-admin": "npm:*"
     "@types/cors": "npm:^2.8.13"
     "@types/express": "npm:^4.17.17"
+    "@types/jest": "npm:^29.5.11"
     "@types/jsonwebtoken": "npm:^9.0.2"
     "@types/multer": "npm:^1.4.7"
     "@types/node": "npm:^18.14.6"
     "@types/pg": "npm:^8"
     "@types/sharp": "npm:^0.31.1"
+    "@types/supertest": "npm:^6.0.2"
     "@types/webpack-node-externals": "npm:^3"
     class-transformer: "npm:^0.5.1"
     class-validator: "npm:^0.14.0"
@@ -138,10 +140,13 @@ __metadata:
     cors: "npm:^2.8.5"
     eslint: "npm:^8.53.0"
     express: "npm:^4.18.2"
+    jest: "npm:^29.7.0"
     jsonwebtoken: "npm:^9.0.2"
     multer: "npm:^1.4.5-lts.1"
-    nanoid: "npm:^5.0.4"
+    nanoid: "npm:3.3.4"
     pg: "npm:^8.11.3"
+    supertest: "npm:^6.3.3"
+    ts-jest: "npm:^29.1.1"
     ts-node: "npm:^10.9.1"
     typeorm: "npm:^0.3.17"
     webpack-node-externals: "npm:^3.0.0"
@@ -687,10 +692,11 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@cellularjs/cli@npm:^0.18.1":
-  version: 0.18.1
-  resolution: "@cellularjs/cli@npm:0.18.1"
+"@cellularjs/cli@npm:^0.19.0":
+  version: 0.19.0
+  resolution: "@cellularjs/cli@npm:0.19.0"
   dependencies:
+    "@cellularjs/net": "npm:^0.19.0"
     chalk: "npm:4"
     clui: "npm:^0.3.6"
     commander: "npm:^8.3.0"
@@ -708,60 +714,60 @@ __metadata:
     webpackbar: "npm:^5.0.2"
   bin:
     cellular: dist/cmd/index.js
-  checksum: 0e2eeffd6bb6a3abdcecb98bf03496306e7bca3482bb7d4363872bb86e934282980ca0267f7c8ff5bc05c3fa4b7eb95abd79d6b2b9bf0181fac16800adad0b22
+  checksum: be223d6aab3a3e5ca1ffa1b6187d1098173df2b02191a8325d2dc136f8ead3a614c3d9d3c8b09c5e14e5cbf835e3d502d8f7ad36ec22a539447f7b2a74677ab5
   languageName: node
   linkType: hard
 
-"@cellularjs/di@npm:^0.18.1":
-  version: 0.18.1
-  resolution: "@cellularjs/di@npm:0.18.1"
+"@cellularjs/di@npm:^0.19.0":
+  version: 0.19.0
+  resolution: "@cellularjs/di@npm:0.19.0"
   dependencies:
     reflect-metadata: "npm:^0.1.13"
-  checksum: 00eb46fafcf21711f50a904ddaae09d680f47c6986c59ff02f42954222c9cb67a9ffc59ab9670a8b497329728b00856fc01f027c81ebc1837915b13ca33ee1cf
+  checksum: a1c4248ff5e22ffe04b0705fd1dfe19959dced88c3158a8061445c8b1ff8fea90d4872f22d8a3ec2187c11a6bcec9975b469e30d64247262296aa9121a7ce678
   languageName: node
   linkType: hard
 
-"@cellularjs/env@npm:^0.18.1":
-  version: 0.18.1
-  resolution: "@cellularjs/env@npm:0.18.1"
+"@cellularjs/env@npm:^0.19.0":
+  version: 0.19.0
+  resolution: "@cellularjs/env@npm:0.19.0"
   dependencies:
-    "@cellularjs/di": "npm:^0.18.1"
+    "@cellularjs/di": "npm:^0.19.0"
     dotenv-flow: "npm:^3.2.0"
-  checksum: b667d2dec72da62fbdfa54fd8d31c0c5e57000a129d212458edb4710fc8bfe7440be9ec969f51c7fbdc322bad62bccd046bdf5ec8d211e842659f5b3d357b6bd
+  checksum: 63b32f52eb18bd38663cb35f713855298950adbc063090cb7e8230ad5ca3240b81d61244a56955c865832870403975339349634c94fed7c002a885bf4ce17ad7
   languageName: node
   linkType: hard
 
-"@cellularjs/express-proxy@npm:^0.18.1":
-  version: 0.18.1
-  resolution: "@cellularjs/express-proxy@npm:0.18.1"
-  checksum: 2d0b09832be810485e91aa9959b80b65a221e9fb24dde0faf1029653e9456c898693ed903f37b96b651af6955fa87edd03b3ef78821e4bbbabc940c9aff790e6
+"@cellularjs/express-proxy@npm:^0.19.0":
+  version: 0.19.0
+  resolution: "@cellularjs/express-proxy@npm:0.19.0"
+  checksum: 187755d77776de1ef8ae58c0e479125c54f8e3229ae5cbdd59057980ad5a692acd6a20a91f860f1b962ad3bd22de9a925765f3ea5dc0d1148e70f88105a1f47d
   languageName: node
   linkType: hard
 
-"@cellularjs/logger@npm:^0.18.1":
-  version: 0.18.1
-  resolution: "@cellularjs/logger@npm:0.18.1"
-  checksum: 69806e1c718594fe4e80dca2aa1e62f484cf70221194974303aab92190dc4178f9e14cbd8e6b7da9d5f230d4fef2b3ea70a48f4810b03d69f2e4a991269b8203
+"@cellularjs/logger@npm:^0.19.0":
+  version: 0.19.0
+  resolution: "@cellularjs/logger@npm:0.19.0"
+  checksum: d9ac82412c8d431765a05309b1e80d62c746a3b45cb6d5e876e2dd756d044821606bd7e9e19fe615d3d9daac2a41618f7399f395648ea8b7d646aae236ba340e
   languageName: node
   linkType: hard
 
-"@cellularjs/net@npm:^0.18.1":
-  version: 0.18.1
-  resolution: "@cellularjs/net@npm:0.18.1"
+"@cellularjs/net@npm:^0.19.0":
+  version: 0.19.0
+  resolution: "@cellularjs/net@npm:0.19.0"
   dependencies:
-    "@cellularjs/di": "npm:^0.18.1"
+    "@cellularjs/di": "npm:^0.19.0"
     emittery: "npm:^0.10.0"
-  checksum: 162b994ff02db53dcd8c727e4a7be18eca479e13164dd6e0689e1ba0f7a7bf3db8a4f455639c01f1ce3a25b8b64475a30b51649dc5d5bc78f908fa0a27b7e945
+  checksum: 111ec0c6bc2abab93824025645e631b0018efe02a7880579005691abe7e865aa7d802e1d4af0727472bc9b577396cf29ccd046cd0e35be6aeb3f421b61fe7cfe
   languageName: node
   linkType: hard
 
-"@cellularjs/typeorm@npm:^0.18.1":
-  version: 0.18.1
-  resolution: "@cellularjs/typeorm@npm:0.18.1"
+"@cellularjs/typeorm@npm:^0.19.0":
+  version: 0.19.0
+  resolution: "@cellularjs/typeorm@npm:0.19.0"
   dependencies:
-    "@cellularjs/di": "npm:^0.18.1"
-    "@cellularjs/net": "npm:^0.18.1"
-  checksum: c52997d8ce05b1407b76bb9f2511be666a5e11d4e3b231c1449a9738b993650b360f6dbb334896b946d9cee90d7aff757b8903e045fa686dc030201dab44886b
+    "@cellularjs/di": "npm:^0.19.0"
+    "@cellularjs/net": "npm:^0.19.0"
+  checksum: 79d3acfb0affa9ac2ad82b51de85f057eb621b1c742ef4b944d21ca30d250c0ca785331da4c816f40850499b26c815ce87cb88a24f5a496ae2733c956400217d
   languageName: node
   linkType: hard
 
@@ -3187,7 +3193,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/jest@npm:^29.5.2":
+"@types/jest@npm:^29.5.11, @types/jest@npm:^29.5.2":
   version: 29.5.11
   resolution: "@types/jest@npm:29.5.11"
   dependencies:
@@ -3424,7 +3430,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/superagent@npm:*":
+"@types/superagent@npm:*, @types/superagent@npm:^8.1.0":
   version: 8.1.1
   resolution: "@types/superagent@npm:8.1.1"
   dependencies:
@@ -3441,6 +3447,16 @@ __metadata:
   dependencies:
     "@types/superagent": "npm:*"
   checksum: e1b4a4d788c19cd92a3f2e6d0979fb0f679c49aefae2011895a4d9c35aa960d43463aca8783a0b3382bbf0b4eb7ceaf8752d7dc80b8f5a9644fa14e1b1bdbc90
+  languageName: node
+  linkType: hard
+
+"@types/supertest@npm:^6.0.2":
+  version: 6.0.2
+  resolution: "@types/supertest@npm:6.0.2"
+  dependencies:
+    "@types/methods": "npm:^1.1.4"
+    "@types/superagent": "npm:^8.1.0"
+  checksum: 44a28f9b35b65800f4c7bcc23748e71c925098aa74ea504d14c98385c36d00de2a4f5aca15d7dc4514bc80533e0af21f985a4ab9f5f317c7266e9e75836aef39
   languageName: node
   linkType: hard
 
@@ -8786,7 +8802,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"jest@npm:^29.5.0":
+"jest@npm:^29.5.0, jest@npm:^29.7.0":
   version: 29.7.0
   resolution: "jest@npm:29.7.0"
   dependencies:
@@ -9838,21 +9854,21 @@ __metadata:
   languageName: node
   linkType: hard
 
+"nanoid@npm:3.3.4":
+  version: 3.3.4
+  resolution: "nanoid@npm:3.3.4"
+  bin:
+    nanoid: bin/nanoid.cjs
+  checksum: a0747d5c6021828fe8d38334e5afb05d3268d7d4b06024058ec894ccc47070e4e81d268a6b75488d2ff3485fa79a75c251d4b7c6f31051bb54bb662b6fd2a27d
+  languageName: node
+  linkType: hard
+
 "nanoid@npm:^3.3.6, nanoid@npm:^3.3.7":
   version: 3.3.7
   resolution: "nanoid@npm:3.3.7"
   bin:
     nanoid: bin/nanoid.cjs
   checksum: e3fb661aa083454f40500473bb69eedb85dc160e763150b9a2c567c7e9ff560ce028a9f833123b618a6ea742e311138b591910e795614a629029e86e180660f3
-  languageName: node
-  linkType: hard
-
-"nanoid@npm:^5.0.4":
-  version: 5.0.4
-  resolution: "nanoid@npm:5.0.4"
-  bin:
-    nanoid: bin/nanoid.js
-  checksum: 28c22d3ff96ea9e6abc059813b8483890c1f52de0f185d8347b0ea205c5966530205c374f1f77492bb53dc5d649de5d36d6eade16645055eb9220dc62080c1b1
   languageName: node
   linkType: hard
 
@@ -12689,7 +12705,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ts-jest@npm:^29.1.0":
+"ts-jest@npm:^29.1.0, ts-jest@npm:^29.1.1":
   version: 29.1.1
   resolution: "ts-jest@npm:29.1.1"
   dependencies:

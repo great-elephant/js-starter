@@ -11,7 +11,6 @@ const cellularConfig: CellularConfig = {
       nodeExternals({
         allowlist: [
           /@sdks/,
-          'nanoid',
         ],
       }),
     ];

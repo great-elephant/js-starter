@@ -2,7 +2,7 @@
   "name": "base-starter",
   "private": true,
   "scripts": {
-    "prepare": "husky install",
+    "husky": "husky install",
     "build": "turbo build",
     "dev": "turbo run dev --concurrency 20",
     "lint": "turbo run lint",

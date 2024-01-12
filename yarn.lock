@@ -2816,18 +2816,6 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@sdks/api-react-hook@workspace:sdks/api-react-hook":
-  version: 0.0.0-use.local
-  resolution: "@sdks/api-react-hook@workspace:sdks/api-react-hook"
-  dependencies:
-    "@sdks/api-core": "npm:*"
-    "@sdks/eslint-config": "npm:*"
-    "@sdks/types-shared": "npm:*"
-    eslint: "npm:^8.53.0"
-    typescript: "npm:^5.2.2"
-  languageName: unknown
-  linkType: soft
-
 "@sdks/api-react-query@npm:*, @sdks/api-react-query@workspace:sdks/api-react-query":
   version: 0.0.0-use.local
   resolution: "@sdks/api-react-query@workspace:sdks/api-react-query"

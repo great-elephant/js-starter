@@ -1,10 +1,15 @@
 # Base starter
-Source base for a normal project, includes:
-- 3 apps: admin site, client site and backend api.
-- SDKs: UI components, form validation, API client,...
 
 ## 1. Apps
-TBD
+- client site: @app/client-nextjs
+- admin site: @app/admin-nextjs
+- api:
+  + @app/api-cellularjs
+  + @app/api-nestjs
+
+---
+Testing:
+- @app/e2e-cypress
 
 ## 2. SDKs
 ### 2.1. @sdks/uikit-react

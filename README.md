@@ -1,15 +1,16 @@
 # Base starter
 
 ## 1. Apps
+## 1.1. Main apps
 - client site: @app/client-nextjs
 - admin site: @app/admin-nextjs
 - api:
   + @app/api-cellularjs
   + @app/api-nestjs
 
----
-Testing:
+## 1.2. Misc
 - @app/e2e-cypress
+- @app/storybook
 
 ## 2. SDKs
 ### 2.1. @sdks/uikit-react

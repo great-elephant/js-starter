@@ -1,6 +1,6 @@
 import { UserRegisterCmd } from './register.cmd';
 
-describe('OAuth:UserRegisterCmd', () => {
+describe('User:UserRegisterCmd', () => {
   test('Hello world', () => {
     expect(UserRegisterCmd).toBeTruthy();
   });

@@ -1,8 +1,19 @@
 'use client';
 
-import { ActivitySquare, Network, Users, Package, Album, Image, Newspaper } from 'lucide-react';
+import { ActivitySquare, Network, Users, Package, Album, Image, Newspaper, LucideIcon } from 'lucide-react';
 
-export const sidebars = [
+export type SidebarGroup = {
+  label: string;
+  icon: LucideIcon;
+  base?: string;
+  href?: string;
+  items?: {
+    label: string;
+    href: string;
+  }[];
+}
+
+export const sidebars: SidebarGroup[] = [
   { label: 'Dashboard', icon: ActivitySquare, href: '/' },
   {
     label: 'Users',

@@ -4,7 +4,7 @@ import { TitlePage } from '@/widgets/title-page';
 
 function Dashboard(): JSX.Element {
   return (
-    <LayoutMain className='container'>
+    <LayoutMain>
       <TitlePage>Dashboard</TitlePage>
       {/* <Link href={'/user'}>users</Link> |
       <Link href={'/user/tr5454hbf'}>detail</Link> */}

@@ -22,14 +22,14 @@ export function MenuUser() {
   }
 
   if (loading || !user) {
-    return <Skeleton className='h-8 w-8 rounded-full bg-gray-200' />;
+    return <Skeleton className='h-8 w-8 rounded-full bg-primary' />;
   }
 
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <button className='rounded-full'>
-          <Center className='h-8 w-8 rounded-full bg-gray-200'>{user.firstName[0]}</Center>
+          <Center className='h-8 w-8 rounded-full bg-primary text-primary-foreground'>{user.firstName[0]}</Center>
         </button>
       </DropdownMenuTrigger>
 

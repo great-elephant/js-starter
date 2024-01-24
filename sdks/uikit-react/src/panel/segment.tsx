@@ -77,7 +77,7 @@ const SegmentList = React.forwardRef<
       {...props}
     >
       {newChildren}
-      <div ref={tabIndicatorRef} className='transition-all duration-300 ease-in-out absolute top-[4px] bg-white shadow-sm rounded-sm ' />
+      <div ref={tabIndicatorRef} className='transition-all duration-300 ease-in-out absolute top-[4px] bg-background shadow-sm rounded-sm ' />
     </TabsPrimitive.List>
   );
 });

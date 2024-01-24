@@ -68,7 +68,7 @@ const TabList = ({ className, children }: TabListProps) => {
       )}
     >
       {newChildren}
-      <div ref={tabIndicatorRef} className='ransition-all duration-300 ease-in-out absolute -bottom-[2px] left-0 bg-black h-[2px]' />
+      <div ref={tabIndicatorRef} className='ransition-all duration-300 ease-in-out absolute -bottom-[2px] left-0 bg-primary h-[2px]' />
     </TabsPrimitive.List>
   );
 };

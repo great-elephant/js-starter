@@ -35,7 +35,7 @@ export function DatePicker({ selected, format = 'PPP', placeholder, onDaySelect 
         <Calendar
           initialFocus
           mode='single'
-          className='p-3 min-w-[280px]'
+          className='p-3 min-w-[280px] bg-background rounded-sm'
           selected={selected}
           onSelect={(day) => {
             setOpen(false);

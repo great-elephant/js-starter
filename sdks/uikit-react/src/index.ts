@@ -9,3 +9,4 @@ export * from './panel';
 export * from './theme';
 export * from './table';
 export * from './lib/utils';
+export * from './rx';

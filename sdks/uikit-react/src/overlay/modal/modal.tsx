@@ -42,7 +42,7 @@ export function Modal({ children, className, size = 'sm' }: ModalProps) {
     <div className='w-screen h-screen overflow-auto overflow-x-hidden fixed top-0 right-0 left-0 bottom-0 grid items-center justify-center py-8'>
       <Fade
         duration={DURATION_IN_SECOND}
-        className='bg-black/20 absolute top-0 right-0 bottom-0 left-0'
+        className='bg-black/60 absolute top-0 right-0 bottom-0 left-0'
         show={show}
       >
         <div onClick={() => !options.disableEsc && modal.modalRef.close()} className='absolute top-0 right-0 bottom-0 left-0' />
@@ -53,7 +53,7 @@ export function Modal({ children, className, size = 'sm' }: ModalProps) {
         show={show}
       >
         <div className={clsx(
-          'relative bg-white mx-auto shadow-md rounded-lg',
+          'relative bg-background mx-auto shadow-md rounded-lg border',
           {
             'min-w-[300px] max-w-[300px] sm:min-w-[420px] sm:max-w-[420px]': size === 'sm',
             'min-w-[300px] max-w-[300px] sm:min-w-[320px] sm:max-w-[320px]': size === 'xs',
@@ -100,7 +100,7 @@ type FooterProps = PropsWithChildren<{
 
 export function ModalFooter({ children, className }: FooterProps) {
   return (
-    <footer className={clsx('flex justify-between pb-6 px-6', className)}>{children}</footer>
+    <footer className={clsx('flex justify-end gap-4 pb-6 px-6', className)}>{children}</footer>
   );
 };
 

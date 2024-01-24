@@ -1,5 +1,7 @@
 # Base starter
 
+![Admin dark](https://github.com/great-elephant/js-starter/blob/develop/screenshots/admin-dark.png?raw=true)
+
 ## 1. Apps
 ## 1.1. Main apps
 - client site: @app/client-nextjs

@@ -18,13 +18,12 @@
     "hoistingLimits": "workspaces"
   },
   "dependencies": {
-    "@cellularjs/cli": "^0.19.0",
-    "@cellularjs/di": "^0.19.0",
-    "@cellularjs/env": "^0.19.0",
-    "@cellularjs/express-proxy": "^0.19.0",
-    "@cellularjs/logger": "^0.19.0",
-    "@cellularjs/net": "^0.19.0",
-    "@cellularjs/typeorm": "^0.19.0",
+    "@cellularjs/di": "^0.20.1",
+    "@cellularjs/env": "^0.20.1",
+    "@cellularjs/express-proxy": "^0.20.1",
+    "@cellularjs/logger": "^0.20.1",
+    "@cellularjs/net": "^0.20.1",
+    "@cellularjs/typeorm": "^0.20.1",
     "class-transformer": "^0.5.1",
     "class-validator": "^0.14.0",
     "cookie-parser": "^1.4.6",
@@ -37,6 +36,7 @@
     "typeorm": "^0.3.17"
   },
   "devDependencies": {
+    "@cellularjs/cli": "^0.20.1",
     "@sdks/eslint-config": "*",
     "@sdks/types-admin": "*",
     "@types/cors": "^2.8.13",

@@ -10,10 +10,11 @@ interface TooltipProps {
   className?: string;
   side?: 'right' | 'top' | 'bottom' | 'left'
 }
-export function Tooltip({ content, side, children, className }: TooltipProps) {
+
+export function TooltipSimple({ content, side, children, className }: TooltipProps) {
   return (
     <TooltipPrimitive.Provider>
-      <TooltipPrimitive.Root delayDuration={0}>
+      <TooltipPrimitive.Root defaultOpen delayDuration={0}>
         <TooltipPrimitive.Trigger asChild>
           {children}
         </TooltipPrimitive.Trigger>
@@ -33,5 +34,34 @@ export function Tooltip({ content, side, children, className }: TooltipProps) {
         </TooltipPrimitive.Portal>
       </TooltipPrimitive.Root>
     </TooltipPrimitive.Provider>
+  );
+}
+
+export function Tooltip({ children }: any) {
+  return (
+    <TooltipPrimitive.Provider>
+      <TooltipPrimitive.Root defaultOpen delayDuration={0}>
+        {children}
+      </TooltipPrimitive.Root>
+    </TooltipPrimitive.Provider>
+  );
+}
+
+export const TooltipTrigger = TooltipPrimitive.Trigger;
+
+export function TooltipContent({ children, side, className }: any) {
+  return (
+    <TooltipPrimitive.Portal>
+      <TooltipPrimitive.Content
+        side={side}
+        sideOffset={5}
+        className={cn(
+          'z-50 overflow-hidden rounded-md px-4 py-1.5 text-sm text-white',
+          className,
+        )}
+      >
+        {children}
+      </TooltipPrimitive.Content>
+    </TooltipPrimitive.Portal>
   );
 }

@@ -10,7 +10,7 @@ export function Collapse({ children, className, show, duration = 0.1 }: Transiti
         animate='open'
         exit='collapsed'
         variants={{
-          open: { height: 'auto' },
+          open: { height: 'auto', overflow: 'visible' },
           collapsed: { height: 0, overflow: 'hidden' },
         }}
         transition={{ duration }}

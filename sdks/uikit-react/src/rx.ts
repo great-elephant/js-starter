@@ -26,9 +26,7 @@ export class Subject<V> {
     const self = this;
     const [value, setValue] = useState(self.getValue());
 
-    useEffect(() => {
-      return self.subscribe(v => setValue(v));
-    }, []);
+    useEffect(() => self.subscribe(v => setValue(v)), []);
 
     return value;
   }

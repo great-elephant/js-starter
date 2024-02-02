@@ -31,12 +31,6 @@ const TabContext = React.createContext<{
   activeTab: string;
 }>(null as any);
 
-
-interface SegmentListProps {
-  children: React.ReactElement<TabTriggerProps>[];
-  className?: string;
-}
-
 const SegmentList = React.forwardRef<
   React.ElementRef<typeof TabsPrimitive.List>,
   React.ComponentPropsWithoutRef<typeof TabsPrimitive.List>
@@ -91,7 +85,7 @@ const SegmentTrigger = React.forwardRef<
   <TabsPrimitive.Trigger
     ref={ref}
     className={cn(
-      'z-10 inline-flex items-center border-none bg-transparent outline-none justify-center whitespace-nowrap rounded-sm px-3 py-1.5 text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 data-[state=active]:text-foreground',
+      'z-[1] inline-flex items-center border-none bg-transparent outline-none justify-center whitespace-nowrap rounded-sm px-3 py-1.5 text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 data-[state=active]:text-foreground',
       className
     )}
     {...props}

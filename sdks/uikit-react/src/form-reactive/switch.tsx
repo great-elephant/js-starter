@@ -18,6 +18,7 @@ export const Switch = ({
 
   const handleChange = useCallback(
     (checked: boolean) => {
+      console.log('checked', checked);
       field.onChange(checked);
     },
     [field],

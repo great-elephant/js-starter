@@ -4,3 +4,4 @@ export * from './fade-collapse';
 export * from './fade-slide';
 export * from './parallax-simple';
 export * from './slide';
+export * from './zoom';

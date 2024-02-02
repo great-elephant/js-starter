@@ -3,33 +3,33 @@
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { ChevronDown, ChevronsRight } from 'lucide-react';
-import { cn } from '@sdks/uikit-react';
+import { cn, Collapse, ScrollArea, DropdownMenu, DropdownMenuTrigger, DropdownMenuContent, DropdownMenuItem } from '@sdks/uikit-react';
 import { usePathname } from 'next/navigation';
 import { SidebarGroup, sidebars } from './cnf';
 import { sideBarState } from './state';
 
 export function SideBarMain() {
   const isSidebarOpened = sideBarState.effect();
-  const pathName = usePathname();
-
-  useEffect(() => {
-    sideBarState.next(false);
-  }, [pathName]);
 
   return (
     <>
-      <div className={cn('transition-all shadow-lg lg:shadow-none fixed top-0 lg:top-[var(--lyt-header-h)] -left-[var(--lyt-sidebar-opened-w)] lg:left-0 bottom-0 z-40 border-r flex flex-col bg-background overflow-hidden', {
+      <div className={cn('transition-all shadow-lg lg:shadow-none fixed top-0 lg:top-[var(--lyt-header-h)] -left-[var(--lyt-sidebar-opened-w)] lg:left-0 bottom-0 z-40 border-r flex flex-col bg-background', {
         'lg:w-[var(--lyt-sidebar-w)] ': !isSidebarOpened,
         'lg:w-[var(--lyt-sidebar-opened-w)] ': isSidebarOpened,
         'left-0 w-[var(--lyt-sidebar-opened-w)]': isSidebarOpened,
       })}>
-        <Link href='/' className='lg:hidden py-2 border-b px-4 h-[var(--lyt-header-h)] text-2xl'>LOGO Full Size</Link>
+        <Link href='/' className='lg:hidden p-4 border-b h-[var(--lyt-header-h)] text-2xl'>LOGO Full Size</Link>
 
-        <nav className='px-1 class flex flex-col gap-2 grow overflow-x-hidden py-2'>
-          {sidebars.map((group, idx) => (
-            <MenuGroup key={idx} group={group} />
-          ))}
-        </nav>
+        <ScrollArea className='grow'>
+          <div className={cn('flex flex-col gap-2 transition-all', {
+            'p-4': isSidebarOpened,
+            'py-4 px-2': !isSidebarOpened,
+          })}>
+            {sidebars.map((group, idx) => (
+              <MenuGroup key={idx} group={group} />
+            ))}
+          </div>
+        </ScrollArea>
 
         <button
           type='button'
@@ -51,57 +51,157 @@ export function SideBarMain() {
 }
 
 function MenuGroup({ group }: { group: SidebarGroup }) {
+  const isSidebarOpened = sideBarState.effect();
+
+  return (
+    <div className='flex flex-col gap-2'>
+      {isSidebarOpened ? <MenuCollapse group={group} /> : <MenuDropdown group={group} />}
+    </div>
+  );
+}
+
+function MenuCollapse({ group }: { group: SidebarGroup }) {
   const pathname = usePathname();
   const [isSubmenuOpen, toggleSubMenu] = useState(false);
-  const isSidebarOpened = sideBarState.getValue();
+  const isSidebarOpened = sideBarState.effect();
 
   useEffect(() => {
     if (!isSidebarOpened) toggleSubMenu(false);
   }, [isSidebarOpened]);
 
-  const Wrapper = group.base ? 'div' : Link;
+  const Wrapper = group.base ? 'button' : Link;
 
   return (
-    <Wrapper
-      href={group.href || ''}
-      className={cn(
-        'px-2 rounded-lg hover:bg-secondary hover:text-secondary-foreground cursor-pointer',
-        'border border-transparent font-medium text-sm transition-colors',
-        {
-          'bg-secondary text-secondary-foreground': group.base && pathname.includes(group.base),
-          'bg-primary text-primary-foreground': !group.base && pathname === group.href,
-        },
-      )}
-    >
-      <div onClick={() => toggleSubMenu(v => !v)} className=' py-1.5 flex items-center justify-between gap-4'>
-        <div className='flex items-center gap-3'><group.icon width={22} height={22} strokeWidth={1.5} /> {group.label}</div>
-        {group.items && <ChevronDown width={16} height={16} className={cn('transition-transform', {
-          'rotate-180': isSubmenuOpen,
-        })} />}
-      </div>
+    <>
+      <Wrapper
+        href={group.href || ''}
+        title={group.label}
+        className={cn(
+          'flex rounded-lg focus:bg-primary/10 hover:bg-primary/10 hover:text-primary cursor-pointer  w-full  ',
+          'font-medium text-sm transition-all select-none outline-none',
+          {
+            'bg-primary/10 text-primary': group.base && pathname.includes(group.base),
+            'bg-primary/5 text-primary': !group.base && pathname === group.href,
+            'px-3': isSidebarOpened,
+            'px-2': !isSidebarOpened,
+          },
+        )}
+        onClick={() => isSidebarOpened && toggleSubMenu(v => !v)}
+      >
+        <div className='py-2 flex items-center justify-between gap-4 w-full'>
+          <div className='flex items-center gap-3'>
+            <group.icon width={22} height={22} strokeWidth={1.5} />
+            {isSidebarOpened && <div>{group.label}</div>}
+          </div>
 
-      {isSidebarOpened && isSubmenuOpen && group.items && (
-        <div className='rounded-lg pb-2 flex flex-col gap-1'>
-          {group.items?.map((sub: any, idx: any) => (
+          {isSidebarOpened && group.items && <ChevronDown width={16} height={16} className={cn('transition-transform duration-200', {
+            'rotate-180': isSubmenuOpen,
+          })} />}
+        </div>
+      </Wrapper>
+
+      {group.items && <Collapse show={isSidebarOpened && isSubmenuOpen}>
+        <div className='rounded-lg flex flex-col gap-1'>
+          {group.items.map((sub, idx) => (
             <Link
               key={idx}
               href={group.base + sub.href || ''}
               className={cn(
-                'px-4 py-1.5 rounded-md hover:bg-gray-600 hover:text-gray-50',
+                'px-[20px] py-1.5 rounded-md',
                 'font-medium text-sm transition-colors',
                 {
-                  'bg-gray-200': sub.href ? pathname.includes(group.base + sub.href) : pathname === group.base,
-                  'bg-primary text-primary-foreground': pathname === group.base + sub.href,
+                  'text-primary': sub.href ? pathname.includes(group.base + sub.href) : pathname === group.base,
+                  'text-primary x': pathname === group.base + sub.href,
                 },
               )}
             >
-              <div className='pl-5 flex items-center gap-4'>
+              <div className='pl-6 flex items-center gap-4 relative'>
+                <div className='absolute left-0.5 bottom-2 border-dashed w-4 h-9 border-l border-b' />
                 {sub.label}
               </div>
             </Link>
           ))}
         </div>
-      )}
-    </Wrapper>
+      </Collapse>}
+    </>
+  );
+}
+
+function MenuDropdown({ group }: { group: SidebarGroup }) {
+  const pathname = usePathname();
+  const isSidebarOpened = sideBarState.effect();
+
+  const Wrapper = group.base ? 'button' : Link;
+
+  if (!group.items) {
+    return (
+      <Wrapper
+        href={group.href || ''}
+        title={group.label}
+        className={cn(
+          'flex rounded-lg focus:bg-primary/10 hover:bg-primary/10 hover:text-primary cursor-pointer px-2 w-full',
+          'font-medium text-sm transition-all select-none outline-none',
+          {
+            'bg-primary/10 text-primary': group.base && pathname.includes(group.base),
+            'bg-primary/5 text-primary': !group.base && pathname === group.href,
+          },
+        )}
+      >
+        <div className='py-2 flex items-center justify-between gap-4 w-full'>
+          <div className='flex items-center gap-3'>
+            <group.icon width={22} height={22} strokeWidth={1.5} />
+            {isSidebarOpened && <div>{group.label}</div>}
+          </div>
+        </div>
+      </Wrapper>
+    );
+  }
+
+  return (
+    <DropdownMenu>
+      <DropdownMenuTrigger asChild>
+        <Wrapper
+          href={group.href || ''}
+          title={group.label}
+          className={cn(
+            'flex rounded-lg focus:bg-primary/10 hover:bg-primary/10 hover:text-primary cursor-pointer w-full px-2',
+            'font-medium text-sm transition-all select-none outline-none',
+            {
+              'bg-primary/10 text-primary': group.base && pathname.includes(group.base),
+              'bg-primary/5 text-primary': !group.base && pathname === group.href,
+            },
+          )}
+        >
+          <div className='py-2 flex items-center justify-between gap-4 w-full'>
+            <div className='flex items-center gap-3'>
+              <group.icon width={22} height={22} strokeWidth={1.5} />
+              {isSidebarOpened && <div>{group.label}</div>}
+            </div>
+          </div>
+        </Wrapper>
+      </DropdownMenuTrigger>
+      <DropdownMenuContent sideOffset={14} side='right'>
+        {group.items?.map((sub, idx) => (
+          <DropdownMenuItem key={idx} asChild>
+            <Link
+              key={idx}
+              href={group.base + sub.href || ''}
+              className={cn(
+                'px-4 py-1.5 rounded-md whitespace-nowrap',
+                'font-medium text-sm transition-colors',
+                {
+                  'text-primary': sub.href ? pathname.includes(group.base + sub.href) : pathname === group.base,
+                  'text-primary x': pathname === group.base + sub.href,
+                },
+              )}
+            >
+              <div className='flex items-center gap-4'>
+                {sub.label}
+              </div>
+            </Link>
+          </DropdownMenuItem>
+        ))}
+      </DropdownMenuContent>
+    </DropdownMenu>
   );
 }

@@ -1,14 +1,31 @@
+import { ConfigModule } from '@nestjs/config';
+ConfigModule.forRoot();
+import '$share/global';
 import { NestFactory } from '@nestjs/core';
-import { ConfigService } from '@nestjs/config';
-import { Logger } from '@nestjs/common';
+import { BadRequestException, Logger, ValidationPipe } from '@nestjs/common';
+import { NODE_PORT } from '$share/const';
 import { AppModule } from './app.module';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
-  const config = await app.resolve(ConfigService);
-  const port = config.get('NODE_PORT');
 
-  await app.listen(port);
-  Logger.log(`ready for HTTP request (port: ${port})`);
+  app.useGlobalPipes(
+    new ValidationPipe({
+      stopAtFirstError: true,
+      exceptionFactory(errors) {
+        return new BadRequestException(
+          errors.map((err) => ({
+            src: err.property,
+            msg: err.constraints[Object.keys(err.constraints)[0]],
+          })),
+        );
+      },
+    }),
+  );
+
+  await app.listen(NODE_PORT);
+
+  Logger.log(`ready for HTTP request (port: ${NODE_PORT})`);
 }
+
 bootstrap();
